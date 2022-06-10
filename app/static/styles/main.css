@@ -1,43 +1,31 @@
+:root {
+  
+}
+
 body {
   padding-top: 80px;
 }
 
-#experience {
-  margin-top: -80px;
-  padding-top: 80px;
-}
-
-#about {
-  margin-top: -80px;
-  padding-top: 80px;
-}
-
-#projs {
-  margin-top: -80px;
-  padding-top: 80px;
-}
-
-#experience, #projs, #about, #contact   {
-  height:100vh;
-}
-
-#resume-pdf {
-  text-decoration: underline;
-  color: #a1daec;
-}
-
 .max-width {
   padding: 20px 50px;
-  background-color: #222629;
+  background-color: #EAE4E3;
 }
 
 * {
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 h1 {
-  color: #fff;
-  text-transform: uppercase;
+  color: #FA3621;
+  text-transform: lowercase;
+}
+
+h2 {
+  text-transform: lowercase;
+}
+
+p {
+  text-transform: lowercase;
 }
 
 a {
@@ -46,15 +34,15 @@ a {
 }
 
 nav {
-  background-color: antiquewhite;
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   padding: 20px;
   padding-right: 30px;
-  background-color: #222629;
+  background-color: #EAE4E3;
   z-index: 999;
+  height: 50px;
 }
 
 .nav-menu {
@@ -66,31 +54,30 @@ nav {
 
 ul {
   list-style: none;
-  color: #fff;
 }
 
 ul a {
   text-decoration: none;
-  color: #a1daec;
-  text-transform: uppercase;
+  color: #FA3621;
+  text-transform: lowercase;
 }
 
 ul a:hover {
-  color: #4f8495;
+  color: #9D8D13;
 }
 
 .home {
   color: #fff;
-  height: 100vh;
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  padding: 0 10vw;
+  padding: 140px 0px 70px 0px;
 }
 
 .home .left h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  text-transform: lowercase;
 }
 
 .home .left {
@@ -98,7 +85,7 @@ ul a:hover {
 }
 
 .home .left .tag:hover {
-  color: #a1daec;
+  color: #9D8D13;
   font-size: 110%;
   transition: 0.3s ease-out;
 }
@@ -119,8 +106,9 @@ ul a:hover {
 
 .home .right img {
   border-radius: 3%;
-  max-width: 500px;
-  border:#4f8495 3px solid;
+  max-width: 400px;
+  border:#FA3621 3px solid;
+  height: 400px;
 }
 
 .home .right ul {
@@ -139,7 +127,7 @@ ul a:hover {
 }
 
 .proj-card {
-  color: #4f8495;
+  color: #D97B30;
   display: flex;
   padding: 10px;
   justify-content: space-between;
@@ -161,11 +149,12 @@ ul a:hover {
 }
 
 .proj-buttons button {
-  background-color: #4f8495;
+  background-color: #FA3621;
   color: #fff;
   border-radius: 5%;
   border-style: none;
   padding: 5px 10px;
+  text-transform: lowercase;
 }
 
 .proj-buttons button:hover {
@@ -179,16 +168,15 @@ ul a:hover {
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: #222629;
   color: white;
 }
 
 .about-section p {
-  color: #a1daec;
+  color: #E68B3B;
 }
 
 .about-section a {
-  color: #4f8495;
+  color: #E68B3B;
   text-decoration: none;
 }
 
@@ -252,7 +240,7 @@ ul a:hover {
   position: relative;
 }
 .polaroid a:after {
-  color: #333;
+  color: #E68B3B;
   font-size: 15px;
   content: attr(title);
   position: relative;
@@ -288,7 +276,7 @@ ul a:hover {
 .map img {
   width: 60%;
   margin: 10px;
-  border: #4f8495 6px solid;
+  border: #FA3621 6px solid;
 }
 
 .map img:hover {
@@ -297,6 +285,17 @@ ul a:hover {
 }
 
 /* Experience */
+.experience {
+  margin-top: 50px;
+  height: 70vh;
+  text-align: center;
+}
+
+.exp-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .exp-cards {
   display: flex;
@@ -306,7 +305,7 @@ ul a:hover {
 
 .exp-card {
   border-radius: 5px;
-  background: rgb(79, 132, 149);
+  background: #D97B30;
   width: 30%;
   min-height: 100px;
   padding: 30px;
@@ -323,6 +322,7 @@ ul a:hover {
 .exp-card h2 {
   margin: 0;
   margin-bottom: 10px;
+  text-transform: lowercase;
 }
 
 /*Contact*/
@@ -359,7 +359,7 @@ textarea::placeholder {
 
 .contact-form button {
   border: none;
-  background-color: #4f8495;
+  background-color: #FA3621;
   color: #fff;
   padding: 10px 15px;
   border-radius: 2px;

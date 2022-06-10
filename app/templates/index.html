@@ -11,17 +11,11 @@
     <meta property="og:description" content="My Personal Portfolio" />
     <meta property="og:url" content="{{ url }}" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
 
     <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
@@ -44,16 +38,14 @@
     <!--Home Section-->
     <div class="home">
       <div class="left">
-        <h1>First Last</h1>
+        <h1>vi-linh vu</h1>
         <p>
-          <span class="tag">Developer</span> | <span class="tag">Fellow</span> |
-          <span class="tag">Student</span>
+          <span class="tag">developer</span> | <span class="tag">fellow</span> |
+          <span class="tag">student</span>
         </p>
       </div>
       <div class="right">
-        <img
-          src="https://shotkit.com/wp-content/uploads/2020/07/woman-headshot-outdoors.jpg"
-        />
+        <img src="../static/img/IMG_1436.jpg" />
         <ul class="links">
           <a href="https://github.com/">
             <li><i class="fa-brands fa-linkedin"></i></li>
@@ -71,18 +63,19 @@
     <!--Experiences -->
     <div id="experience" class="experience">
       <h1>Experience</h1>
-      <a id="resume-pdf" href=".\static\img\software-engineer-resume-example.pdf" download="newfilename">Resume.pdf</a>
-      <div class="exp-cards">
-        {% for exp in experiences %}
-        <div class="exp-card">
-          <h2>{{ exp.name }}</h2>
-          <ul>
-            {% for pt in exp.descrip %}
-            <li>{{ pt }}</li>
-            {% endfor %}
-          </ul>
+      <div class="exp-body">
+        <div class="exp-cards">
+          {% for exp in experiences %}
+          <div class="exp-card">
+            <h2>{{ exp.name }}</h2>
+            <ul>
+              {% for pt in exp.descrip %}
+              <li>{{ pt }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
     </div>
 
@@ -140,9 +133,10 @@
         {% endfor %}
       </div>
       <div class="map">
-        <img src="../static/img/Screenshot 2022-06-04 163820.png" />
+        <img
+          src="https://cdn.dribbble.com/userupload/2645435/file/original-8c78673c7b5bb13b6875ca08c3f7d32e.jpg?compress=1&resize=2400x1800"
+        />
         <p>Where I've Been</p>
-        
       </div>
     </div>
 

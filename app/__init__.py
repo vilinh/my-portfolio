@@ -27,10 +27,10 @@ class Exp:
 
 
 pols = [
-    Polaroid("Caption of polaroid 1", "https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=%5B1936%2C1296%5D&w=3872&h=1936&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F35%2F2019%2F08%2F05144705%2FGettyImages-96709750-1.jpg"),
-    Polaroid("Caption of polaroid 2", ".\static\img\R.jpg"),
+    Polaroid("Caption of polaroid 1", "https://cdn.dribbble.com/userupload/2645435/file/original-8c78673c7b5bb13b6875ca08c3f7d32e.jpg?compress=1&resize=2400x1800"),
+    Polaroid("Caption of polaroid 2", "https://cdn.dribbble.com/userupload/2645435/file/original-8c78673c7b5bb13b6875ca08c3f7d32e.jpg?compress=1&resize=2400x1800"),
     Polaroid("Caption of polaroid 3",
-             "https://www.success.com/wp-content/uploads/2016/09/therealreasontravelingmakesyouhappy.jpg")
+             "https://cdn.dribbble.com/userupload/2645435/file/original-8c78673c7b5bb13b6875ca08c3f7d32e.jpg?compress=1&resize=2400x1800")
 ]
 
 
