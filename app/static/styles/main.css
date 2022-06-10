@@ -63,7 +63,7 @@ ul a {
 }
 
 ul a:hover {
-  color: #9D8D13;
+  color: #FFB20F;
 }
 
 .home {
@@ -85,7 +85,7 @@ ul a:hover {
 }
 
 .home .left .tag:hover {
-  color: #9D8D13;
+  color: #FFB20F;
   font-size: 110%;
   transition: 0.3s ease-out;
 }
@@ -107,7 +107,7 @@ ul a:hover {
 .home .right img {
   border-radius: 3%;
   max-width: 400px;
-  border:#FA3621 3px solid;
+  border:#24346A 3px solid;
   height: 400px;
 }
 
@@ -122,15 +122,16 @@ ul a:hover {
 
 .proj-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
 .proj-card {
-  color: #D97B30;
+  color: #24346A;
   display: flex;
-  padding: 10px;
+  border-radius: 12px;
   justify-content: space-between;
+  padding: 20px;
 }
 
 .proj-card img {
@@ -149,7 +150,7 @@ ul a:hover {
 }
 
 .proj-buttons button {
-  background-color: #FA3621;
+  background-color: #24346A;
   color: #fff;
   border-radius: 5%;
   border-style: none;
@@ -286,8 +287,7 @@ ul a:hover {
 
 /* Experience */
 .experience {
-  margin-top: 50px;
-  height: 70vh;
+  margin: 50px 0px 120px 0;
   text-align: center;
 }
 
@@ -305,7 +305,7 @@ ul a:hover {
 
 .exp-card {
   border-radius: 5px;
-  background: #D97B30;
+  background: #24346A;
   width: 30%;
   min-height: 100px;
   padding: 30px;
