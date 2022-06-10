@@ -1,5 +1,9 @@
 :root {
-  
+  --space-cadet: #24346aff;
+  --red-salsa: #f05d5eff;
+  --lavender-blush: #efe4e5ff;
+  --moss-green: #7a8450ff;
+  --honey-yellow: #ffb20fff;
 }
 
 body {
@@ -16,7 +20,7 @@ body {
 }
 
 h1 {
-  color: #FA3621;
+  color: var(--red-salsa);
   text-transform: lowercase;
 }
 
@@ -58,12 +62,12 @@ ul {
 
 ul a {
   text-decoration: none;
-  color: #FA3621;
+  color: var(--red-salsa);
   text-transform: lowercase;
 }
 
 ul a:hover {
-  color: #FFB20F;
+  color: var(--honey-yellow);
 }
 
 .home {
@@ -85,7 +89,7 @@ ul a:hover {
 }
 
 .home .left .tag:hover {
-  color: #FFB20F;
+  color: var(--honey-yellow);
   font-size: 110%;
   transition: 0.3s ease-out;
 }
@@ -107,7 +111,7 @@ ul a:hover {
 .home .right img {
   border-radius: 3%;
   max-width: 400px;
-  border:#24346A 3px solid;
+  border:var(--space-cadet) 3px solid;
   height: 400px;
 }
 
@@ -124,6 +128,10 @@ ul a:hover {
   margin: 50px 0px;
 }
 
+.projs h1 {
+  color: var(--space-cadet);
+}
+
 .proj-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -131,7 +139,7 @@ ul a:hover {
 }
 
 .proj-card {
-  color: #24346A;
+  color: var(--space-cadet);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -158,7 +166,7 @@ ul a:hover {
 }
 
 .proj-buttons button {
-  background-color: #24346A;
+  background-color: var(--space-cadet);
   color: #fff;
   border-radius: 5%;
   border-style: none;
@@ -168,7 +176,7 @@ ul a:hover {
 
 .proj-buttons button:hover {
   cursor: pointer;
-  background-color: #a1daec;
+  background-color: var(--honey-yellow);
   color: #000;
 }
 
@@ -177,11 +185,11 @@ ul a:hover {
 .about-section {
   padding: 50px;
   text-align: center;
-  color: white;
+  color: var(--space-cadet);
 }
 
 .about-section p {
-  color: #E68B3B;
+  color: var(--space-cadet);
 }
 
 .about-section a {
@@ -285,7 +293,7 @@ ul a:hover {
 .map img {
   width: 60%;
   margin: 10px;
-  border: #FA3621 6px solid;
+  border: var(--space-cadet) 6px solid;
 }
 
 .map img:hover {
@@ -296,7 +304,10 @@ ul a:hover {
 /* Experience */
 .experience {
   margin: 50px 0px 120px 0;
-  text-align: center;
+}
+
+.experience h1 {
+   color: var(--space-cadet);
 }
 
 .exp-body {
@@ -313,7 +324,7 @@ ul a:hover {
 
 .exp-card {
   border-radius: 5px;
-  background: #24346A;
+  background: var(--space-cadet);
   width: 30%;
   min-height: 100px;
   padding: 30px;
@@ -321,6 +332,7 @@ ul a:hover {
   text-align: left;
   color: white;
 }
+
 
 .exp-card ul {
   margin: 0;
@@ -362,12 +374,12 @@ textarea {
 
 .contact-form input::placeholder,
 textarea::placeholder {
-  color: #4f8495;
+  color: var(--space-cadet);
 }
 
 .contact-form button {
   border: none;
-  background-color: #FA3621;
+  background-color: var(--red-salsa);
   color: #fff;
   padding: 10px 15px;
   border-radius: 2px;

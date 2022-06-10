@@ -27,7 +27,7 @@ class Exp:
 
 
 pols = [
-    Polaroid("Caption of polaroid 1", "https://cdn.dribbble.com/userupload/2645435/file/original-8c78673c7b5bb13b6875ca08c3f7d32e.jpg?compress=1&resize=2400x1800"),
+    Polaroid("drawing", "./static/img/drawing.png"),
     Polaroid("Caption of polaroid 2", "https://cdn.dribbble.com/userupload/2645435/file/original-8c78673c7b5bb13b6875ca08c3f7d32e.jpg?compress=1&resize=2400x1800"),
     Polaroid("Caption of polaroid 3",
              "https://cdn.dribbble.com/userupload/2645435/file/original-8c78673c7b5bb13b6875ca08c3f7d32e.jpg?compress=1&resize=2400x1800")
