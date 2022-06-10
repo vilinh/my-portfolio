@@ -120,26 +120,34 @@ ul a:hover {
   margin-top: 15px;
 }
 
+.projs {
+  margin: 50px 0px;
+}
+
 .proj-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
 .proj-card {
   color: #24346A;
   display: flex;
+  align-items: center;
+  flex-direction: column;
   border-radius: 12px;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
 }
 
 .proj-card img {
-  border-radius: 5%;
+  width: 150px;
+  height: 100%;
 }
 
 .proj-card .proj-descrip {
   color: #6b6e70;
+  margin-top: 0;
 }
 
 .proj-buttons {
