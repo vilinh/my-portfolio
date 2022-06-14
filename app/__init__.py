@@ -1,29 +1,17 @@
 import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
+import json
 
 load_dotenv()
 app = Flask(__name__)
-
-
-class Proj:
-    def __init__(self, name, descrip, git, demo) -> None:
-        self.name = name
-        self.descrip = descrip
-        self.git = git
-        self.demo = demo
-
+dataf = open("app/static/data.json",  encoding="utf-8")
+data = json.load(dataf)
 
 class Polaroid:
     def __init__(self, caption, pic):
         self.caption = caption
         self.pic = pic
-
-
-class Exp:
-    def __init__(self, name, descrip) -> None:
-        self.name = name
-        self.descrip = descrip
 
 
 pols = [
@@ -37,25 +25,11 @@ pols = [
 @app.route('/')
 def index():
 
-    projs = [
-        Proj("Proj 1", "Description of my proj 1!",
-             "https://google.com/", "https://github.com/"),
-        Proj("Proj 2", "This is my proj 2!!",
-             "https://github.com/", "https://github.com/"),
-        Proj("Proj 3", "Description of my proj 3",
-             "https://github.com/", "https://github.com/"),
-        Proj("Proj 4", "Description of my proj 4",
-             "https://github.com/", "https://github.com/")
-    ]
+    projs = data['projs']
+    exps2 = data['experiences']
+    hobbies = data['polaroids']
 
-    exps = [
-        Exp("Experience 1", ["point 1", "point 2", "point 3"]),
-        Exp("Experience 2", ["point 1", "point 2", "point 3"]),
-        Exp("Experience 3", ["point 1", "point 2", "point 3"]),
-        Exp("Experience 4", ["point 1", "point 2", "point 3"])
-    ]
-
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"), projects=projs, polaroids=pols, experiences=exps)
+    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"), projects=projs, polaroids=hobbies, experiences=exps2)
 
 
 @app.route('/hobbies')

@@ -146,6 +146,7 @@ ul a:hover {
   border-radius: 12px;
   justify-content: center;
   padding: 20px;
+  text-align: center;
 }
 
 .proj-card img {
@@ -286,19 +287,12 @@ ul a:hover {
   color: #fff;
 }
 
-.map h2 {
-  text-transform: uppercase;
-}
-
-.map img {
-  width: 60%;
-  margin: 10px;
+path {
   border: var(--space-cadet) 6px solid;
 }
 
-.map img:hover {
-  width: 1.1;
-  opacity: 90%;
+.map h2 {
+  text-transform: uppercase;
 }
 
 /* Experience */
@@ -337,6 +331,11 @@ ul a:hover {
 .exp-card ul {
   margin: 0;
   padding: 0px 10px;
+  align-items: center;
+}
+
+.exp-card li {
+  margin: 10px;
 }
 
 .exp-card h2 {
