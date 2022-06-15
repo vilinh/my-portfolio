@@ -287,14 +287,6 @@ ul a:hover {
   color: #fff;
 }
 
-path {
-  border: var(--space-cadet) 6px solid;
-}
-
-.map h2 {
-  text-transform: uppercase;
-}
-
 /* Experience */
 .experience {
   margin: 50px 0px 120px 0;
