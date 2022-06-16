@@ -60,25 +60,6 @@
       </div>
     </div>
 
-    <!--Experiences -->
-    <div id="experience" class="experience">
-      <h1>Experience</h1>
-      <div class="exp-body">
-        <div class="exp-cards">
-          {% for exp in experiences %}
-          <div class="exp-card">
-            <h2>{{ exp.name }}</h2>
-            <ul>
-              {% for pt in exp.descrip %}
-              <li>{{ pt }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-
     <!--Project Section-->
     <div id="projs" class="projs">
       <h1>Projects</h1>
@@ -105,7 +86,7 @@
         My <a href="{{ url_for('hobbies') }}">Hobbies</a>: drawing, cooking,
         traveling
       </p>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="row">
         {% for pol in polaroids %}
         <div class="polaroid">
           <a class="caption" style="font-size: 1px" title="{{ pol.caption }}">
@@ -119,7 +100,7 @@
         </div>
         {% endfor %}
       </div>
-      
+
       <div class="map">
         <script
           src="https://www.amcharts.com/lib/3/ammap.js"
@@ -197,6 +178,25 @@
         </script>
 
         <p>Where I've Been</p>
+      </div>
+    </div>
+
+    <!--Experiences -->
+    <div id="experience" class="experience">
+      <h1>Experience</h1>
+      <div class="exp-body">
+        <div class="exp-cards">
+          {% for exp in experiences %}
+          <div class="exp-card">
+            <h2>{{ exp.name }}</h2>
+            <ul>
+              {% for pt in exp.descrip %}
+              <li>{{ pt }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
 

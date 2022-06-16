@@ -77,6 +77,7 @@ ul a:hover {
   align-items: center;
   justify-content: center;
   padding: 140px 0px 70px 0px;
+  text-align: center;
 }
 
 .home .left h1 {
@@ -130,6 +131,7 @@ ul a:hover {
 
 .projs h1 {
   color: var(--space-cadet);
+  text-align: center;
 }
 
 .proj-cards {
@@ -182,9 +184,12 @@ ul a:hover {
 }
 
 /* Styles for about-me-section */
+.about-section h1 {
+  color: var(--space-cadet);
+}
 
 .about-section {
-  padding: 50px;
+  padding-top: 50px;
   text-align: center;
   color: var(--space-cadet);
 }
@@ -199,52 +204,16 @@ ul a:hover {
 }
 
 .row {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
-}
-.row > * {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
-  margin-top: var(--bs-gutter-y);
-}
-
-.row-cols-auto > * {
-  flex: 0 0 auto;
-  width: auto;
-}
-
-.row-cols-1 > * {
-  flex: 0 0 auto;
-  width: 100%;
-}
-
-.row-cols-sm-2 > * {
-  flex: 0 0 auto;
-  width: 50%;
-}
-
-.row-cols-md-3 > * {
-  flex: 0 0 auto;
-  width: 30%;
-}
-
-.row-cols-md-4 > * {
-  flex: 0 0 auto;
-  width: 25%;
+  align-items: center;
+  justify-content: center;
 }
 
 .polaroid a {
   background: #ffffff;
   display: inline-block;
-  margin: 55px 75px 30px;
+  margin: 20px;
   padding: 15px 15px 30px;
   text-align: center;
   text-decoration: none;
@@ -293,7 +262,8 @@ ul a:hover {
 }
 
 .experience h1 {
-   color: var(--space-cadet);
+  color: var(--space-cadet);
+  text-align: center;
 }
 
 .exp-body {
@@ -311,12 +281,16 @@ ul a:hover {
 .exp-card {
   border-radius: 5px;
   background: var(--space-cadet);
-  width: 30%;
-  min-height: 100px;
   padding: 30px;
   margin: 20px;
+  width: 50%;
+  height: 50%;
   text-align: left;
   color: white;
+}
+
+.exp-card:hover {
+  background-color: var(--moss-green);
 }
 
 
@@ -380,4 +354,24 @@ textarea::placeholder {
   cursor: pointer;
   background-color: #a1daec;
   color: #000;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 800px) {
+  .proj-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .exp-card {
+    font-size: .7rem;
+  }
+
+  .exp-card h2 {
+    text-align: center;
+  }
+
+  .nav-menu {
+    justify-content: center;
+  }
 }
