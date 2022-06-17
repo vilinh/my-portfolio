@@ -268,6 +268,13 @@ ul a:hover {
   margin: 120px 0px 120px 0;
 }
 
+.exp-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
 .experience h1 {
   color: var(--space-cadet);
   text-align: center;
@@ -311,9 +318,14 @@ ul a:hover {
   margin: 10px;
 }
 
-.exp-card h2 {
+.exp-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.exp-card h2, h4 {
   margin: 0;
-  margin-bottom: 10px;
   text-transform: lowercase;
 }
 
@@ -373,10 +385,7 @@ textarea::placeholder {
   .exp-card {
     font-size: .7rem;
   }
-
-  .exp-card h2 {
-    text-align: center;
-  }
+  
 
   .nav-menu {
     justify-content: center;
