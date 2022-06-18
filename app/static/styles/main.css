@@ -149,6 +149,12 @@ ul a:hover {
   justify-content: center;
   padding: 20px;
   text-align: center;
+  border: 2px solid transparent;
+  background-color: #dfdede;
+}
+
+.proj-card:hover {
+  border: 2px solid var(--honey-yellow);
 }
 
 .proj-card img {
@@ -159,6 +165,10 @@ ul a:hover {
 .proj-card .proj-descrip {
   color: #6b6e70;
   margin-top: 0;
+}
+
+.proj-card .tools {
+  color: var(--space-cadet);
 }
 
 .proj-buttons {

@@ -4,25 +4,29 @@
       "proj_title": "plant recipes",
       "proj_descript": "A blog to display recipes",
       "github_link": "https://github.com/vilinh/plant-recipes-react",
-      "demo_link": "https://github.com/vilinh/plant-recipes-react"
+      "demo_link": "https://github.com/vilinh/plant-recipes-react",
+      "technologies": "React, CSS, MongoDB, NodeJS"
     },
     {
       "proj_title": "flashcards",
       "proj_descript": "A flashcard iOS app to use as a study tool!",
       "github_link": "https://github.com/vilinh/Flashcards",
-      "demo_link": "https://github.com/vilinh/Flashcards"
+      "demo_link": "https://github.com/vilinh/Flashcards",
+      "technologies": "Swift"
     },
     {
       "proj_title": "rgb color game",
       "proj_descript": "A game to test your knowledge of RGB color values",
       "github_link": "https://github.com/vilinh/guess-color-game",
-      "demo_link": "https://github.com/vilinh/guess-color-game"
+      "demo_link": "https://github.com/vilinh/guess-color-game",
+      "technologies": "HTML, CSS, Javascript"
     },
     {
       "proj_title": "movie hub",
       "proj_descript": "A watchlist to keep track of what you want to watch next!",
       "github_link": "https://github.com/vilinh/moviehub",
-      "demo_link": "https://github.com/vilinh/moviehub"
+      "demo_link": "https://github.com/vilinh/moviehub",
+      "technologies": "React, Javascript, APIs"
     }
   ],
 
