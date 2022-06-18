@@ -28,6 +28,16 @@
 
   "experiences": [
     {
+      "name": "Production Engineering Fellow",
+      "descrip": [
+        "Deployed a production level application on a VPS",
+        "Automated deployment with bash scripting",
+        "Used Flask to implement reusable HTML components"
+      ],
+      "term": "may 2022 - present",
+      "company": "mlh w/ meta"
+    },
+    {
       "name": "Library Reference Assistance Technician",
       "descrip": [
         "Provided research assistance towards patrons at the library research desk and through online chat",

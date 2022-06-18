@@ -4,6 +4,7 @@
   --lavender-blush: #efe4e5ff;
   --moss-green: #7a8450ff;
   --honey-yellow: #ffb20fff;
+  --grey: #dfdede;
 }
 
 body {
@@ -268,11 +269,8 @@ ul a:hover {
   margin: 120px 0px 120px 0;
 }
 
-.exp-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+.experience .company {
+  color: var(--honey-yellow);
 }
 
 .experience h1 {
@@ -300,6 +298,10 @@ ul a:hover {
   width: 50%;
   height: 50%;
   text-align: left;
+  color: var(--grey);
+}
+
+.exp-card h2 {
   color: white;
 }
 
@@ -312,10 +314,22 @@ ul a:hover {
   margin: 0;
   padding: 0px 10px;
   align-items: center;
+  list-style: none;
+  margin-left: -20px;
 }
 
 .exp-card li {
   margin: 10px;
+  color: var(--lavender-blush);
+  position: relative;
+  padding-left: 20px;
+}
+
+.exp-card li::before {
+  content: "▸    ";
+  color: var(--honey-yellow);
+  position: absolute;
+  left: 0;
 }
 
 .exp-header {

@@ -167,10 +167,8 @@
         <div class="exp-cards">
           {% for exp in experiences %}
           <div class="exp-card">
-            <div class="exp-header">
-              <h2>{{ exp.name }}</h2>
-              <h4>{{ exp.company }} | {{ exp.term }}</h4>
-            </div>
+            <h2>{{ exp.name }} @ <span class="company">{{ exp.company }}</span></h2>
+            <h4>{{ exp.term }}</h4>
             <ul>
               {% for pt in exp.descrip %}
               <li>{{ pt }}</li>
