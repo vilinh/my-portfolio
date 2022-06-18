@@ -17,6 +17,13 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
     <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
@@ -43,20 +50,21 @@
           <span class="tag">developer</span> | <span class="tag">fellow</span> |
           <span class="tag">student</span>
         </p>
+        <ul class="links">
+          <a href="https://www.linkedin.com/in/vilinhv/">
+            <li><i class="fa-brands fa-linkedin"></i></li>
+          </a>
+          <a href="https://www.github.com/vilinh"
+            ><li><i class="fa-brands fa-github"></i></li
+          ></a>
+          <a href="mailto:vilinhlvu@gmail.com"
+            ><li><i class="fa-solid fa-envelope"></i></li
+          ></a>
+        </ul>
+
       </div>
       <div class="right">
         <img src="../static/img/IMG_1436.jpg" />
-        <ul class="links">
-          <a href="https://github.com/">
-            <li><i class="fa-brands fa-linkedin"></i></li>
-          </a>
-          <a href=""
-            ><li><i class="fa-brands fa-github"></i></li
-          ></a>
-          <a href=""
-            ><li><i class="fa-brands fa-twitter"></i></li
-          ></a>
-        </ul>
       </div>
     </div>
 
@@ -163,7 +171,7 @@
 
     <!--Experiences -->
     <div id="experience" class="experience">
-      <h1>Experience</h1>
+      <h1>Experience <a id="resume" href="../static/img/Vi-Linh Vu Resume 2022.pdf" target="_blank"><i class="fa-solid fa-file-arrow-down"></i></a></h1>
       <div class="exp-body">
         <div class="exp-cards">
           {% for exp in experiences %}

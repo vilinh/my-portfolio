@@ -23,6 +23,7 @@ body {
 h1 {
   color: var(--red-salsa);
   text-transform: lowercase;
+  margin: 30;
 }
 
 h2 {
@@ -83,6 +84,7 @@ ul a:hover {
 .home .left h1 {
   font-size: 3.5rem;
   text-transform: lowercase;
+  margin: 25px;
 }
 
 .home .left {
@@ -123,6 +125,25 @@ ul a:hover {
   padding: 0;
   font-size: 30px;
   margin-top: 15px;
+}
+
+.home .links {
+  display: flex;
+  justify-content: center;
+}
+
+.home ul.links {
+  padding: 0;
+}
+
+.home .links li {
+  font-size: 1.5rem;
+  margin: 10px;
+  color: var(--space-cadet)
+}
+
+.home .links li:hover{
+  color: var(--honey-yellow);
 }
 
 .projs {
@@ -279,6 +300,14 @@ ul a:hover {
   margin: 120px 0px 120px 0;
 }
 
+#resume {
+  color: var(--space-cadet);
+}
+
+#resume:hover {
+  color: var(--honey-yellow);
+}
+
 .experience .company {
   color: var(--honey-yellow);
 }
@@ -316,7 +345,7 @@ ul a:hover {
 }
 
 .exp-card:hover {
-  background-color: var(--moss-green);
+  background-color:rgb(44, 64, 129);
 }
 
 
