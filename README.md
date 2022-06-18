@@ -1,11 +1,12 @@
-# Production Engineering - Week 1 - Portfolio Site
+# Production Engineering - Portfolio Site
 
 A portfolio website that has sections to display basic information, experiences, education, hobbies, and contact info.
 
-## Visuals
-<img width="500" alt="Screen Shot 2022-06-05 at 9 17 48 PM" src="https://user-images.githubusercontent.com/81380688/172093992-a66cdcca-c806-4b8e-977b-bce52c8cbd98.png">
+View the website here: http://vifolio.duckdns.org:5000/
 
-<img width="500" alt="Screen Shot 2022-06-05 at 9 18 27 PM" src="https://user-images.githubusercontent.com/81380688/172094046-96e23942-8fc1-48fa-a2ae-16e8e8393705.png">
+## Visuals
+<img width="500" alt="Screen Shot 2022-06-17 at 9 49 08 AM" src="https://user-images.githubusercontent.com/81380688/174342044-d68c9d20-bc5b-4f02-8d34-d9c0841e23a9.png">
+<img width="500" alt="Screen Shot 2022-06-17 at 9 50 03 AM" src="https://user-images.githubusercontent.com/81380688/174342160-7a73dbc7-f7ad-4e49-9dfd-cc8e259e6e1d.png">
 
 ## Technologies Used
 - HTML & CSS for the frontend
