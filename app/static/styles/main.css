@@ -408,16 +408,20 @@ textarea::placeholder {
 
   .exp-card {
     font-size: .7rem;
+    width: 80%;
   }
   
-
   .nav-menu {
     justify-content: center;
   }
 
   #mapdiv {
-    width: 400px;
+    width: 300px;
   }
+
+  .contact-form input, textarea {
+    width: 70%;
+}
 }
 
 @media only screen and (max-width: 500px) {
@@ -427,6 +431,7 @@ textarea::placeholder {
 
   .exp-card {
     font-size: .8rem;
+    width: 70%;
   }
 
   .nav-menu li{
@@ -436,6 +441,6 @@ textarea::placeholder {
 
   .max-width {
     margin: 0;
-    padding: 10px;
+    padding: 20px;
   }
 }

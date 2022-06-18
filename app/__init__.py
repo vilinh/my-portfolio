@@ -8,20 +8,6 @@ app = Flask(__name__)
 dataf = open("app/static/data.json",  encoding="utf-8")
 data = json.load(dataf)
 
-class Polaroid:
-    def __init__(self, caption, pic):
-        self.caption = caption
-        self.pic = pic
-
-
-pols = [
-    Polaroid("drawing", "./static/img/drawing.png"),
-    Polaroid("cooking", "./static/img/cooking.png"),
-    Polaroid("traveling",
-             "./static/img/traveling.png")
-]
-
-
 @app.route('/')
 def index():
 
@@ -34,4 +20,4 @@ def index():
 
 @app.route('/hobbies')
 def hobbies():
-    return render_template('hobbies.html', url=os.getenv("URL"), polaroids=pols)
+    return render_template('hobbies.html', url=os.getenv("URL"), polaroids=hobbies)
