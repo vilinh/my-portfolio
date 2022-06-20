@@ -1,11 +1,12 @@
 import os
-from xmlrpc.client import DateTime
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import json
 from peewee import *
 import datetime
 from playhouse.shortcuts import model_to_dict
+import requests
+import urllib, hashlib
 
 
 
@@ -50,6 +51,18 @@ def get_time_line_post():
         ]
     }
 
+
+@app.route('/api/timeline_post/<int:id>', methods=['DELETE'])
+def delete_time_line_post_byid(id):
+    TimelinePost.get_by_id(id).delete_instance()
+    return "Successfully deleted"
+
+@app.route('/api/timeline_post/<string:name>', methods=['DELETE'])
+def delete_time_line_post_byname(name):
+    post = TimelinePost.get(TimelinePost.name == name)
+    post.delete_instance()
+    return "Successfully deleted\n"
+
 @app.route('/')
 def index():
 
@@ -64,3 +77,18 @@ def index():
 def hobbies():
     return render_template('hobbies.html', url=os.getenv("URL"), polaroids=hobbies)
 
+@app.route('/timeline')
+def timeline():
+    posts = requests.get("http://127.0.0.1:5000/api/timeline_post").json()
+    pfps = []
+    email = "someone@somewhere.com"
+    default = "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+    size = 40
+
+    for i in posts["timeline_posts"]:
+        email = i["email"].encode('utf-8')
+        gravatar_url = "https://www.gravatar.com/avatar/" + hashlib.md5(email.lower()).hexdigest() + "?"
+        gravatar_url += urllib.parse.urlencode({'d':"identicon", 's':str(size)})
+        pfps.append(gravatar_url)
+
+    return render_template('timeline.html', title="Timeline", url=os.getenv("URL"), num=len(posts["timeline_posts"]), posts=posts["timeline_posts"], pfps=pfps)

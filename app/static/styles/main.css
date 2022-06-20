@@ -14,6 +14,7 @@ body {
 .max-width {
   padding: 20px 50px;
   background-color: #EAE4E3;
+  padding-top: 52px;
 }
 
 * {
@@ -77,7 +78,7 @@ ul a:hover {
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  padding: 140px 0px 70px 0px;
+  padding: 120px 0px 70px 0px;
   text-align: center;
 }
 
@@ -383,7 +384,7 @@ ul a:hover {
 }
 
 /*Contact*/
-.contact {
+.contact, .create-post {
   width: 100%;
   margin: 15vh 0 10vh 0;
   display: flex;
@@ -391,7 +392,12 @@ ul a:hover {
   align-items: center;
   justify-content: center;
 }
-.contact-form {
+
+.create-post {
+  margin: 5vh 0 5vh 0;
+}
+
+.contact-form, .post-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -401,7 +407,7 @@ ul a:hover {
 }
 
 .contact-form input,
-textarea {
+textarea, .post-form input, .post-form textarea {
   border: none;
   border-radius: 2px;
   font-size: 15px;
@@ -410,11 +416,11 @@ textarea {
 }
 
 .contact-form input::placeholder,
-textarea::placeholder {
+textarea::placeholder, .post-form input::placeholder {
   color: var(--space-cadet);
 }
 
-.contact-form button {
+.contact-form button, .post-form button {
   border: none;
   background-color: var(--red-salsa);
   color: #fff;
@@ -422,10 +428,42 @@ textarea::placeholder {
   border-radius: 2px;
 }
 
-.contact-form button:hover {
+.contact-form button:hover, .post-form button:hover {
   cursor: pointer;
   background-color: #a1daec;
   color: #000;
+}
+
+/* timeline posts */
+.post {
+  background-color: var(--space-cadet);
+  color: var(--grey);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.post h5 {
+  margin: 0;
+}
+
+.post .user-heading {
+  display: flex;
+}
+
+.post-content {
+  margin-top: 5px;
+}
+
+.post .user-heading .text {
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.post img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
 }
 
 /* responsive */
@@ -469,7 +507,6 @@ textarea::placeholder {
   }
 
   .max-width {
-    margin: 0;
     padding: 20px;
   }
 }
