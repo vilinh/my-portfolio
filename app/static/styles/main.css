@@ -195,24 +195,16 @@ ul a:hover {
 
 .proj-buttons {
   display: flex;
-  justify-content: center;
-  gap: 5%;
-  margin-top: 10px;
+  align-self: flex-end;
 }
 
-.proj-buttons button {
-  background-color: var(--space-cadet);
-  color: #fff;
-  border-radius: 5%;
-  border-style: none;
-  padding: 5px 10px;
-  text-transform: lowercase;
+.proj-button {
+  color: var(--space-cadet);
 }
 
-.proj-buttons button:hover {
+.proj-button:hover {
   cursor: pointer;
-  background-color: var(--honey-yellow);
-  color: #000;
+  color: var(--honey-yellow);
 }
 
 /* Styles for about-me-section */

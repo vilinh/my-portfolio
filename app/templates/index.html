@@ -74,14 +74,13 @@
       <div class="proj-cards">
         {% for proj in projects %}
         <div class="proj-card">
+          <div class="proj-buttons">
+            <a href="{{ proj.github_link }}"><i class="fa-solid fa-up-right-from-square proj-button"></i></a>
+          </div>
           <img src="../static/img/projyellow.png" width="250" height="250" />
           <h2>{{ proj.proj_title }}</h2>
           <p class="proj-descrip">{{ proj.proj_descript }}</p>
           <p class="tools">{{ proj.technologies }}</p>
-          <div class="proj-buttons">
-            <a href="{{ proj.github_link }}"><button>GitHub</button></a>
-            <a href="{{ proj.demo_link }}"><button>Demo</button></a>
-          </div>
         </div>
         {% endfor %}
       </div>
