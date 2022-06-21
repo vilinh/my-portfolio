@@ -8,8 +8,6 @@ from playhouse.shortcuts import model_to_dict
 import requests
 import urllib, hashlib
 
-
-
 load_dotenv()
 app = Flask(__name__)
 dataf = open("app/static/data.json",  encoding="utf-8")
@@ -89,7 +87,7 @@ def timeline():
     for i in posts["timeline_posts"]:
         email = i["email"].encode('utf-8')
         gravatar_url = "https://www.gravatar.com/avatar/" + hashlib.md5(email.lower()).hexdigest() + "?"
-        gravatar_url += urllib.parse.urlencode({'d':"identicon", 's':str(size)})
+        gravatar_url += urllib.parse.urlencode({'d':default, 's':str(size)})
         pfps.append(gravatar_url)
 
     return render_template('timeline.html', title="Timeline", url=os.getenv("URL"), num=len(posts["timeline_posts"]), posts=posts["timeline_posts"], pfps=pfps)
