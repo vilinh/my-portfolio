@@ -80,7 +80,7 @@ def hobbies():
 
 @app.route('/timeline')
 def timeline():
-    posts = requests.get("http://127.0.0.1:5000/api/timeline_post").json()
+    posts = get_time_line_post()
     pfps = []
     email = "someone@somewhere.com"
     default = "https://cdn-icons-png.flaticon.com/512/149/149071.png"
