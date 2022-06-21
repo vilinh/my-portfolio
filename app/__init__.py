@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from dotenv import load_dotenv
 import json
 from peewee import *
@@ -38,7 +38,7 @@ def post_time_line_post():
     content = request.form['content']
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
 
-    return model_to_dict(timeline_post)
+    return redirect("/timeline", code=302)
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
