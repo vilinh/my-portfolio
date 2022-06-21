@@ -75,6 +75,7 @@ def index():
 
 @app.route('/hobbies')
 def hobbies():
+    hobbies = data['polaroids']
     return render_template('hobbies.html', url=os.getenv("URL"), polaroids=hobbies)
 
 @app.route('/timeline')
