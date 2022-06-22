@@ -40,10 +40,7 @@
     <h1>Timeline</h1>
     <div id="create-post" class="create-post">
       <h1>create a post <i class="fa-solid fa-feather"></i></h1>
-      <form
-        id="post-form"
-        class="post-form"
-      >
+      <form id="post-form"  class="post-form">
         <input type="text" name="name" placeholder="Name" required />
         <input type="email" name="email" placeholder="Email" required />
         <textarea
@@ -53,7 +50,7 @@
           required
           rows="5"
         ></textarea>
-        <button type="submit" value="submit" className="post-submit">
+        <button id="post-submit" type="submit" value="submit" className="post-submit">
           post
         </button>
       </form>
@@ -76,8 +73,7 @@
   <script>
     document.getElementById('post-form').addEventListener("submit", async function (e) {
       const params = new URLSearchParams([...new FormData(e.target).entries()]);
-      fetch("/api/timeline_post", {method: "POST", body: params})
-      const response = await new Response(params).text();
+      fetch("/api/timeline_post", {method: "POST", redirect: 'follow', body: params})
     });
   </script>
 </html>
