@@ -76,18 +76,25 @@
   </body>
 
   <script>
-    document
-      .getElementById("post-form")
-      .addEventListener("submit", async function (e) {
-        const params = new URLSearchParams([
-          ...new FormData(e.target).entries(),
-        ]);
-        await fetch("/api/timeline_post", {
-          method: "POST",
-          redirect: "follow",
-          body: params,
+    const postForm = document.getElementById("post-form");
+
+    postForm.addEventListener("submit", function (e) {
+
+      const formData = new FormData(this);
+
+      fetch("/api/timeline_post", {
+        method: "post",
+        body: formData,
+      })
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (text) {
+          console.log(text);
+        })
+        .catch(function (error) {
+          console.error(error);
         });
-        location.refresh(true);
-      });
+    });
   </script>
 </html>
