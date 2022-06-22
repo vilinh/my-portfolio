@@ -82,7 +82,7 @@
         const params = new URLSearchParams([
           ...new FormData(e.target).entries(),
         ]);
-        fetch("/api/timeline_post", {
+        await fetch("/api/timeline_post", {
           method: "POST",
           redirect: "follow",
           body: params,
