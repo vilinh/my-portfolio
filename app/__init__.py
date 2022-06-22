@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import json
 from peewee import *
@@ -75,7 +75,7 @@ def post_time_line_post():
     timeline_post = TimelinePost.create(
         name=name, email=email, content=content)
 
-    return redirect("/timeline", code=302)
+    return model_to_dict(timeline_post)
 
 
 @app.route('/api/timeline_post/<int:id>', methods=['DELETE'])
