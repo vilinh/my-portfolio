@@ -389,6 +389,11 @@ ul a:hover {
   margin: 5vh 0 5vh 0;
 }
 
+.create-post h1:hover {
+  filter: brightness(1.4);
+  cursor: default;
+}
+
 .contact-form, .post-form {
   display: flex;
   flex-direction: column;
@@ -422,8 +427,7 @@ textarea::placeholder, .post-form input::placeholder {
 
 .contact-form button:hover, .post-form button:hover {
   cursor: pointer;
-  background-color: #a1daec;
-  color: #000;
+  filter: brightness(1.4);
 }
 
 /* timeline posts */

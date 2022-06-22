@@ -17,6 +17,13 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
     <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
@@ -32,7 +39,7 @@
   <body class="max-width">
     <h1>Timeline</h1>
     <div id="create-post" class="create-post">
-      <h1>create a post</h1>
+      <h1>create a post <i class="fa-solid fa-feather"></i></h1>
       <form
         class="post-form"
         action="/api/timeline_post"
@@ -48,7 +55,7 @@
           rows="5"
         ></textarea>
         <button type="submit" value="submit" className="post-submit">
-          submit
+          post
         </button>
       </form>
     </div>
