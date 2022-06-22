@@ -99,6 +99,8 @@ def timeline():
     default = "https://cdn-icons-png.flaticon.com/512/149/149071.png"
     size = 40
 
+    print("timeline got called")
+
     for i in posts["timeline_posts"]:
         email = i["email"].encode('utf-8')
         gravatar_url = "https://www.gravatar.com/avatar/" + \
