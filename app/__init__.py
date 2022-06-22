@@ -8,6 +8,7 @@ from playhouse.shortcuts import model_to_dict
 import requests
 import urllib
 import hashlib
+import sys
 
 load_dotenv()
 app = Flask(__name__)
@@ -100,6 +101,7 @@ def timeline():
     size = 40
 
     print("timeline got called")
+    sys.stdout.write('gfg')
 
     for i in posts["timeline_posts"]:
         email = i["email"].encode('utf-8')
