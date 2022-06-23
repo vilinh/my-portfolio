@@ -27,7 +27,7 @@
 
     <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
     <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
-    <title>{{ title }}</title>
+    <title>Vi-Linh Vu</title>
   </head>
 
   <!--Nav-->
@@ -38,7 +38,6 @@
       <a href="#projs"><li>Projects</li></a>
       <a href="#about"><li>About</li></a>
       <a href="{{ url_for('timeline') }}"><li>Timeline</li></a>
-      <a href="#contact"><li>Contact</li></a>
     </ul>
 
     
@@ -71,26 +70,8 @@
       </div>
     </div>
 
-    <!--Project Section-->
-    <div id="projs" class="projs">
-      <h1>Projects</h1>
-      <div class="proj-cards">
-        {% for proj in projects %}
-        <div class="proj-card">
-          <div class="proj-buttons">
-            <a href="{{ proj.github_link }}"><i class="fa-solid fa-up-right-from-square proj-button"></i></a>
-          </div>
-          <img src="../static/img/projyellow.png" width="250" height="250" />
-          <h2>{{ proj.proj_title }}</h2>
-          <p class="proj-descrip">{{ proj.proj_descript }}</p>
-          <p class="tools">{{ proj.technologies }}</p>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-
-    <!--About Me Section-->
-    <div id="about" class="about-section">
+     <!--About Me Section-->
+     <div id="about" class="about-section">
       <h1>About Me</h1>
       <p>My Interests: webdev, art, korean r&b</p>
       <p>
@@ -191,20 +172,25 @@
       </div>
     </div>
 
-    <!--Contact-->
-    <div id="contact" class="contact">
-      <h1>Contact</h1>
-      <form class="contact-form">
-        <input type="text" id="name" placeholder="Name" required />
-        <input type="email" id="email" placeholder="Email" required />
-        <textarea
-          id="message"
-          placeholder="Message"
-          required
-          rows="5"
-        ></textarea>
-        <button type="submit" className="contact-submit">submit</button>
-      </form>
+    <!--Project Section-->
+    <div id="projs" class="projs">
+      <h1>Projects</h1>
+      <div class="proj-cards">
+        {% for proj in projects %}
+        <div class="proj-card">
+          <div class="proj-buttons">
+            <a href="{{ proj.github_link }}"><i class="fa-solid fa-up-right-from-square proj-button"></i></a>
+          </div>
+          <div class="proj-card-text">
+            <h2>{{ proj.proj_title }}</h2>
+            <p class="proj-descrip">{{ proj.proj_descript }}</p>
+            <p class="tools"><span style="color: var(--honey-yellow);">●  </span>{{ proj.technologies }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
   </body>
+
+  <footer>Made with <i class="far fa-heart"></i> by Vi-Linh</footer>
 </html>
