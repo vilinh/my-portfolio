@@ -9,6 +9,10 @@
 
 body {
   padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .max-width {
@@ -75,21 +79,21 @@ ul a:hover {
 .home {
   color: #fff;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
-  padding: 120px 0px 70px 0px;
-  text-align: center;
+  height: 90vh;
+
+}
+
+.home .left {
+  margin-left: 40px;
 }
 
 .home .left h1 {
   font-size: 3.5rem;
   text-transform: lowercase;
-  margin: 25px;
-}
-
-.home .left {
-  flex: 3;
+  text-align: left;
 }
 
 .home .left .tag:hover {
@@ -99,7 +103,6 @@ ul a:hover {
 }
 
 .home .right {
-  flex: 4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,7 +133,6 @@ ul a:hover {
 
 .home .links {
   display: flex;
-  justify-content: center;
 }
 
 .home ul.links {
@@ -148,7 +150,12 @@ ul a:hover {
 }
 
 .projs {
-  margin: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  margin: 25px 0px 50px 0;
+  max-width: 900px;
 }
 
 .projs h1 {
@@ -158,7 +165,7 @@ ul a:hover {
 
 .proj-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 40px;
 }
@@ -498,6 +505,10 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+  .home {
+    flex-direction: column-reverse;
+  }
+
   .proj-cards {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -505,6 +516,7 @@ footer {
   .exp-card {
     font-size: .8rem;
     width: 70%;
+    margin: 20 0;
   }
 
   .nav-menu li{
