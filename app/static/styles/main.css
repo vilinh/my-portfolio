@@ -15,12 +15,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .max-width {
-  padding: 20px 50px;
+  padding: 0px 50px 20px 50px;
   background-color: var(--grey);
-  padding-top: 52px;
 }
 
 * {
@@ -47,9 +47,6 @@ a {
 }
 
 nav {
-  position: fixed;
-  top: 0;
-  right: 0;
   width: 100%;
   padding: 20px;
   background-color: var(--grey);
@@ -62,6 +59,7 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  padding: 0;
 }
 
 ul {
@@ -84,9 +82,9 @@ ul a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
   color: #6b6e70;
   font-size: 1.3rem;
+  height: 80vh;
 }
 
 .home h1 {
