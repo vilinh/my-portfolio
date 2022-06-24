@@ -60,7 +60,7 @@ nav {
 .nav-menu {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -81,57 +81,28 @@ ul a:hover {
 .home {
   color: #fff;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 90vh;
-
-}
-
-.home .left {
-  margin-left: 40px;
-}
-
-.home .left h1 {
-  font-size: 3.5rem;
-  text-transform: lowercase;
-  text-align: left;
-}
-
-.home .left .tag:hover {
-  color: var(--red-salsa);
-  font-size: 110%;
-  transition: 0.3s ease-out;
-}
-
-.home .right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: 20px;
-}
-
-.home .left p {
   color: #6b6e70;
   font-size: 1.3rem;
 }
 
-.home .right img {
-  border-radius: 3%;
-  max-width: 400px;
-  border:var(--honey-yellow) 2.5px solid;
-  height: 400px;
+.home h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
 }
 
-.home .right ul {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 0;
-  font-size: 30px;
-  margin-top: 15px;
+.home p {
+  margin: 0;
 }
+.home .tag:hover {
+  color: var(--honey-yellow);
+  font-size: 110%;
+  transition: 0.3s ease-out;
+}
+
 
 .home .links {
   display: flex;
@@ -150,6 +121,8 @@ ul a:hover {
 .home .links li:hover{
   color: var(--honey-yellow);
 }
+
+/* projects */
 
 .projs {
   display: flex;
@@ -441,7 +414,7 @@ footer {
 
 @media only screen and (max-width: 600px) {
   .home {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .proj-cards {
@@ -455,7 +428,7 @@ footer {
   }
 
   .nav-menu li{
-    font-size: .8rem;
+    font-size: 1rem;
     text-align: center;
   }
 
