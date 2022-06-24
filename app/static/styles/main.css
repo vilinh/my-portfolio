@@ -301,7 +301,10 @@ ul a:hover {
   text-transform: lowercase;
 }
 
-/*Contact*/
+/*timeline*/
+#form-h1 {
+  color: var(--red-salsa);
+}
 
 .contact, .create-post {
   width: 100%;
@@ -332,7 +335,7 @@ ul a:hover {
 
 .contact-form input,
 textarea, .post-form input, .post-form textarea {
-  border: var(--honey-yellow) 2px solid;
+  border: var(--red-salsa) 1px solid;
   border-radius: 8px;
   font-size: 15px;
   padding: 10px;
@@ -341,7 +344,7 @@ textarea, .post-form input, .post-form textarea {
 
 .contact-form input::placeholder,
 textarea::placeholder, .post-form input::placeholder {
-  color: var(--space-cadet);
+  color: grey;
 }
 
 .contact-form button, .post-form button {
@@ -358,6 +361,10 @@ textarea::placeholder, .post-form input::placeholder {
 }
 
 /* timeline posts */
+.timeline h1 {
+  color: var(--space-cadet);
+}
+
 .posts {
   width: 80vw;
 }
