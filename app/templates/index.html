@@ -36,11 +36,8 @@
       <a href=""><li>Home</li></a>
       <a href="#experience"><li>Experience</li></a>
       <a href="#projs"><li>Projects</li></a>
-      <a href="#about"><li>About</li></a>
       <a href="{{ url_for('timeline') }}"><li>Timeline</li></a>
     </ul>
-
-    
   </nav>
 
   <body class="max-width">
@@ -63,103 +60,30 @@
             ><li><i class="fa-solid fa-envelope"></i></li
           ></a>
         </ul>
-
       </div>
       <div class="right">
         <img src="../static/img/IMG_1436.jpg" />
       </div>
     </div>
 
-     <!--About Me Section-->
-     <div id="about" class="about-section">
-      <h1>About Me</h1>
-      <p>My Interests: webdev, art, korean r&b</p>
-      <p>
-        My <a href="{{ url_for('hobbies') }}">Hobbies</a>: drawing, cooking,
-        traveling
-      </p>
-      <div class="row">
-        {% for pol in polaroids %}
-        <div class="polaroid">
-          <a class="caption" style="font-size: 1px" title="{{ pol.caption }}">
-            <img
-              height="250"
-              src="{{ pol.img }}"
-              alt="Santorini"
-              title="Santorini"
-            />
-          </a>
-        </div>
-        {% endfor %}
-      </div>
-
-      <div class="map">
-        <script
-          src="https://www.amcharts.com/lib/3/ammap.js"
-          type="text/javascript"
-        ></script>
-        <script
-          src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js"
-          type="text/javascript"
-        ></script>
-        <script
-          src="https://www.amcharts.com/lib/3/themes/dark.js"
-          type="text/javascript"
-        ></script>
-        <div id="mapdiv"></div>
-        </div>
-        <script type="text/javascript">
-          var map = AmCharts.makeChart("mapdiv", {
-            type: "map",
-            theme: "dark",
-            projection: "mercator",
-            panEventsEnabled: true,
-            backgroundColor: "#D1D1D1",
-            backgroundAlpha: 1,
-            zoomControl: {
-              zoomControlEnabled: true,
-            },
-            dataProvider: {
-              map: "worldHigh",
-              getAreasFromMap: true,
-              areas: [
-                {
-                  id: "MX",
-                  showAsSelected: true,
-                },
-                {
-                  id: "US",
-                  showAsSelected: true,
-                },
-                {
-                  id: "VN",
-                  showAsSelected: true,
-                },
-              ],
-            },
-            areasSettings: {
-              autoZoom: true,
-              color: "#efe4e5",
-              colorSolid: "#f05d5e",
-              selectedColor: "#f05d5e",
-              outlineColor: "#666666",
-              rollOverColor: "#ffb20f",
-              rollOverOutlineColor: "#000000",
-            },
-          });
-        </script>
-        <p>Where I've Been</p>
-      </div>
-    </div>
-
     <!--Experiences -->
     <div id="experience" class="experience">
-      <h1>Experience <a id="resume" href="../static/img/Vi-Linh Vu Resume 2022.pdf" target="_blank"><i class="fa-solid fa-file-arrow-down"></i></a></h1>
+      <h1>
+        Experience
+        <a
+          id="resume"
+          href="../static/img/Vi-Linh Vu Resume 2022.pdf"
+          target="_blank"
+          ><i class="fa-solid fa-file-arrow-down"></i
+        ></a>
+      </h1>
       <div class="exp-body">
         <div class="exp-cards">
           {% for exp in experiences %}
           <div class="exp-card">
-            <h2>{{ exp.name }} @ <span class="company">{{ exp.company }}</span></h2>
+            <h2>
+              {{ exp.name }} @ <span class="company">{{ exp.company }}</span>
+            </h2>
             <h4>{{ exp.term }}</h4>
             <ul>
               {% for pt in exp.descrip %}
@@ -179,12 +103,18 @@
         {% for proj in projects %}
         <div class="proj-card">
           <div class="proj-buttons">
-            <a href="{{ proj.github_link }}"><i class="fa-solid fa-up-right-from-square proj-button"></i></a>
+            <a href="{{ proj.github_link }}"
+              ><i class="fa-solid fa-up-right-from-square proj-button"></i
+            ></a>
           </div>
+          <img src="../static/img/projyellow.png" width="100" />
           <div class="proj-card-text">
             <h2>{{ proj.proj_title }}</h2>
             <p class="proj-descrip">{{ proj.proj_descript }}</p>
-            <p class="tools"><span style="color: var(--honey-yellow);">●  </span>{{ proj.technologies }}</p>
+            <p class="tools">
+              <span style="color: var(--honey-yellow)">● </span>{{
+              proj.technologies }}
+            </p>
           </div>
         </div>
         {% endfor %}

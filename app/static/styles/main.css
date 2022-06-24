@@ -174,12 +174,14 @@ ul a:hover {
   color: var(--space-cadet);
   display: flex;
   flex-direction: column;
+  align-items: center;
   border-radius: 12px;
   padding: 0px 20px;
   border: 2px solid transparent;
-  background-color: var(--grey);
+  background-color: rgb(238, 238, 238, 0.9);
   position: relative;
   font-size: 15px;
+  text-align: center;
 }
 
 .proj-card:hover {
