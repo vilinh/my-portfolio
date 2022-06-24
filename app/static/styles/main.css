@@ -5,6 +5,8 @@
   --moss-green: #7a8450ff;
   --honey-yellow: #ffb20fff;
   --grey: #dfdede;
+
+  --black: #282525;
 }
 
 body {
@@ -73,7 +75,7 @@ ul a {
 }
 
 ul a:hover {
-  color: var(--honey-yellow);
+  color: var(--red-salsa);
 }
 
 .home {
@@ -97,7 +99,7 @@ ul a:hover {
 }
 
 .home .left .tag:hover {
-  color: var(--honey-yellow);
+  color: var(--red-salsa);
   font-size: 110%;
   transition: 0.3s ease-out;
 }
@@ -118,7 +120,7 @@ ul a:hover {
 .home .right img {
   border-radius: 3%;
   max-width: 400px;
-  border:var(--space-cadet) 2px solid;
+  border:var(--honey-yellow) 2.5px solid;
   height: 400px;
 }
 
@@ -185,7 +187,7 @@ ul a:hover {
 }
 
 .proj-card:hover {
-  border: 2px solid var(--honey-yellow);
+  border: 2px solid var(--red-salsa);
 }
 
 .proj-card img {
@@ -213,7 +215,7 @@ ul a:hover {
 
 .proj-button:hover {
   cursor: pointer;
-  color: var(--honey-yellow);
+  color: var(--red-salsa);
 }
 
 /* Styles for about-me-section */
@@ -307,11 +309,11 @@ ul a:hover {
 }
 
 #resume:hover {
-  color: var(--honey-yellow);
+  color: var(--red-salsa);
 }
 
 .experience .company {
-  color: var(--honey-yellow);
+  color: var(--red-salsa);
 }
 
 .experience h1 {
@@ -333,21 +335,17 @@ ul a:hover {
 
 .exp-card {
   border-radius: 5px;
-  background: var(--space-cadet);
+  background: rgb(238, 238, 238, .9);
   padding: 30px;
   margin: 20px;
   width: 50%;
   height: 50%;
   text-align: left;
-  color: var(--grey);
-}
-
-.exp-card h2 {
-  color: white;
+  color: var(--space-cadet);
 }
 
 .exp-card:hover {
-  background-color:rgb(44, 64, 129);
+  filter: brightness(1.05)
 }
 
 
@@ -361,7 +359,7 @@ ul a:hover {
 
 .exp-card li {
   margin: 10px;
-  color: var(--lavender-blush);
+  color: (var(--space-cadet));
   position: relative;
   padding-left: 20px;
 }
@@ -385,6 +383,7 @@ ul a:hover {
 }
 
 /*Contact*/
+
 .contact, .create-post {
   width: 100%;
   margin: 15vh 0 10vh 0;
@@ -414,8 +413,8 @@ ul a:hover {
 
 .contact-form input,
 textarea, .post-form input, .post-form textarea {
-  border: none;
-  border-radius: 2px;
+  border: var(--honey-yellow) 2px solid;
+  border-radius: 8px;
   font-size: 15px;
   padding: 10px;
   width: 40%;
@@ -445,11 +444,15 @@ textarea::placeholder, .post-form input::placeholder {
 }
 
 .post {
-  background-color: var(--space-cadet);
-  color: var(--grey);
+  background-color: rgb(244, 244, 244, .9);
+  color: var(--space-cadet);
   padding: 20px;
   margin: 10px;
   border-radius: 3px;
+}
+
+.post:hover{
+  filter: brightness(.9);
 }
 
 .post h5 {

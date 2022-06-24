@@ -36,44 +36,50 @@
     </ul>
   </nav>
 
-  <body class="timeline max-width">
-    <h1>Timeline</h1>
-    <div id="create-post" class="create-post">
-      <h1 id="form-h1">create a post <i class="fa-solid fa-feather"></i></h1>
-      <form id="post-form" class="post-form">
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea
-          id="content"
-          name="content"
-          placeholder="Content"
-          required
-          rows="5"
-        ></textarea>
-        <button
-          id="post-submit"
-          type="submit"
-          value="submit"
-          className="post-submit"
-        >
-          post
-        </button>
-      </form>
-    </div>
+  <body class="max-width">
+    <div class="timeline">
+      <h1>Timeline</h1>
+      <div class="timeline-content">
+        <div id="create-post" class="create-post">
+          <h1 id="form-h1">
+            create a post <i class="fa-solid fa-feather"></i>
+          </h1>
+          <form id="post-form" class="post-form">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea
+              id="content"
+              name="content"
+              placeholder="Content"
+              required
+              rows="5"
+            ></textarea>
+            <button
+              id="post-submit"
+              type="submit"
+              value="submit"
+              className="post-submit"
+            >
+              post
+            </button>
+          </form>
+        </div>
 
-    <div class="posts">
-      {% for i in range(0, num) %}
-      <div class="post">
-        <div class="user-heading">
-          <img src="{{ pfps[i] }}" />
-          <div class="text">
-            <h4 class="post-name">{{ posts[i].name }}</h4>
-            <h5 class="post-email">{{ posts[i].email }}</h5>
-            <p class="post-content">{{ posts[i].content }}</p>
+        <div class="posts">
+          {% for i in range(0, num) %}
+          <div class="post">
+            <div class="user-heading">
+              <img src="{{ pfps[i] }}" />
+              <div class="text">
+                <h4 class="post-name">{{ posts[i].name }}</h4>
+                <h5 class="post-email">{{ posts[i].email }}</h5>
+                <p class="post-content">{{ posts[i].content }}</p>
+              </div>
+            </div>
           </div>
+          {% endfor %}
         </div>
       </div>
-      {% endfor %}
     </div>
   </body>
 
