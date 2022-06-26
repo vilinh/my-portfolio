@@ -49,6 +49,8 @@ nav {
   padding: 20px 0px;
   background-color: var(--grey);
   z-index: 999;
+  position: absolute;
+  top: 0;
   height: var(--navbar-height);
 }
 
@@ -82,7 +84,7 @@ ul a:hover {
   justify-content: center;
   color: #6b6e70;
   font-size: 1.3rem;
-  height: calc(100vh - var(--navbar-height) - 40px);
+  height: 100vh;
 }
 
 .home h1 {
@@ -188,7 +190,7 @@ ul a:hover {
 
 /* Experience */
 .experience {
-  margin: 60px 0px 60px 0;
+  margin: 0px 0px 60px 0;
   width: 100%;
   max-width: 1024px;
   gap: 20px;
