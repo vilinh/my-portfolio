@@ -4,10 +4,6 @@ A portfolio website that that displays everything from my projects to interests!
 
 View the website here: http://vifolio.duckdns.org:5000/
 
-## Visuals
-<img width="500" alt="Screen Shot 2022-06-17 at 9 49 08 AM" src="https://user-images.githubusercontent.com/81380688/174342044-d68c9d20-bc5b-4f02-8d34-d9c0841e23a9.png"> <img width="500" alt="Screen Shot 2022-06-17 at 9 50 03 AM" src="https://user-images.githubusercontent.com/81380688/174342160-7a73dbc7-f7ad-4e49-9dfd-cc8e259e6e1d.png">
-
-
 ## Technologies Used & Concepts Implemented
 #### Frontend #### 
 -  HTML & CSS
