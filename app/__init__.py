@@ -34,8 +34,15 @@ def hobbies():
 
 
 # MySQL Database
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"), user=os.getenv("MYSQL_USER"),
-                     password=os.getenv("MYSQL_PASSWORD"), host=os.getenv("MYSQL_HOST"), port=3306)
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+else:
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+                         user=os.getenv("MYSQL_USER"),
+                         password=os.getenv("MYSQL_PASSWORD"),
+                         host=os.getenv("MYSQL_HOST"),
+                         port=3306)
 
 print(mydb)
 
@@ -100,9 +107,6 @@ def timeline():
     default = "https://cdn-icons-png.flaticon.com/512/149/149071.png"
     size = 40
 
-    print("timeline got called")
-    sys.stdout.write('gfg')
-
     for i in posts["timeline_posts"]:
         email = i["email"].encode('utf-8')
         gravatar_url = "https://www.gravatar.com/avatar/" + \
@@ -111,3 +115,6 @@ def timeline():
         pfps.append(gravatar_url)
 
     return render_template('timeline.html', title="Timeline", url=os.getenv("URL"), num=len(posts["timeline_posts"]), posts=posts["timeline_posts"], pfps=pfps)
+
+
+
