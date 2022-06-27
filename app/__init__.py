@@ -9,6 +9,8 @@ import requests
 import urllib
 import hashlib
 import sys
+from requests.models import Response
+
 
 load_dotenv()
 app = Flask(__name__)
@@ -34,6 +36,7 @@ def hobbies():
 
 
 # MySQL Database
+
 if os.getenv("TESTING") == "true":
     print("Running in test mode")
     mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
@@ -77,13 +80,37 @@ def get_time_line_post():
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
+    name, email, content = None, None, None
+    try:
+        name = request.form['name']
+        if name == "":
+            return "<html>Invalid name</html>", 400
+    except:
+        if not name:
+            return "<html>Invalid name</html>", 400
+    try:
+        email = request.form['email']
+    except:
+        if not email:
+            return "<html>Invalid email</html>", 400
+        if email == "":
+            return "<html>Invalid email</html>", 400
+    try:
+        content = request.form['content']
+        if content == "":
+            return "<html>Invalid content</html>", 400
+    except:
+        if not content:
+            return "<html>Invalid content</html>", 400
+         
     timeline_post = TimelinePost.create(
         name=name, email=email, content=content)
-
     return model_to_dict(timeline_post)
+        
+        
+        
+
+        
 
 
 @app.route('/api/timeline_post/<int:id>', methods=['DELETE'])
@@ -115,6 +142,3 @@ def timeline():
         pfps.append(gravatar_url)
 
     return render_template('timeline.html', title="Timeline", url=os.getenv("URL"), num=len(posts["timeline_posts"]), posts=posts["timeline_posts"], pfps=pfps)
-
-
-

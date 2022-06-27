@@ -363,8 +363,12 @@ textarea::placeholder, .post-form input::placeholder {
   filter: brightness(.9);
 }
 
-.post h5 {
+.post h4 {
   margin: 0;
+}
+
+.post h5 {
+  margin: 4px 0px;
 }
 
 .post .user-heading {

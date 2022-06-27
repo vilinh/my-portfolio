@@ -45,7 +45,13 @@
             create a post <i class="fa-solid fa-feather"></i>
           </h1>
           <form id="post-form" class="post-form">
-            <input type="text" name="name" placeholder="Name" required />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            />
             <input type="email" name="email" placeholder="Email" required />
             <textarea
               id="content"
@@ -54,11 +60,13 @@
               required
               rows="5"
             ></textarea>
+            <span id="name-error"></span>
             <button
               id="post-submit"
               type="submit"
               value="submit"
               className="post-submit"
+              onclick="validate('name')"
             >
               post
             </button>
@@ -106,5 +114,6 @@
           console.error(error);
         });
     });
+
   </script>
 </html>
