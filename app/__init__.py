@@ -10,7 +10,7 @@ import urllib
 import hashlib
 import sys
 from requests.models import Response
-
+import re
 
 load_dotenv()
 app = Flask(__name__)
@@ -90,10 +90,11 @@ def post_time_line_post():
             return "<html>Invalid name</html>", 400
     try:
         email = request.form['email']
+        pat = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$"
+        if email == "" or not re.match(pat, email):
+            return "<html>Invalid email</html>", 400
     except:
         if not email:
-            return "<html>Invalid email</html>", 400
-        if email == "":
             return "<html>Invalid email</html>", 400
     try:
         content = request.form['content']
