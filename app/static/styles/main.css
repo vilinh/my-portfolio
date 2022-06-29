@@ -8,6 +8,8 @@
 
   --black: #282525;
   --navbar-height: 50px;
+
+  scroll-behavior: smooth;
 }
 
 body {
