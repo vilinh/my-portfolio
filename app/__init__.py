@@ -80,29 +80,6 @@ def get_time_line_post():
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name, email, content = None, None, None
-    try:
-        name = request.form['name']
-        if name == "":
-            return "<html>Invalid name</html>", 400
-    except:
-        if not name:
-            return "<html>Invalid name</html>", 400
-    try:
-        email = request.form['email']
-        pat = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$"
-        if email == "" or not re.match(pat, email):
-            return "<html>Invalid email</html>", 400
-    except:
-        if not email:
-            return "<html>Invalid email</html>", 400
-    try:
-        content = request.form['content']
-        if content == "":
-            return "<html>Invalid content</html>", 400
-    except:
-        if not content:
-            return "<html>Invalid content</html>", 400
          
     timeline_post = TimelinePost.create(
         name=name, email=email, content=content)
