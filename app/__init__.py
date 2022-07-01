@@ -15,7 +15,7 @@ import re
 load_dotenv()
 app = Flask(__name__)
 
-dataf = open("app/static/data.json",  encoding="utf-8")
+dataf = open("static/data.json",  encoding="utf-8")
 data = json.load(dataf)
 
 
@@ -63,7 +63,7 @@ class TimelinePost(Model):
 
 
 mydb.connect()
-mydb.create_tables([TimelinePost])
+# mydb.create_tables([TimelinePost])
 
 # TimelinePost api routes
 
