@@ -80,16 +80,35 @@ def get_time_line_post():
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-         
-    timeline_post = TimelinePost.create(
-        name=name, email=email, content=content)
+    name, content, email = None, None, None
+    try: 
+        name = request.form['name']
+        if name =="":
+            return "<html>Invalid name</html>", 400
+    except:
+        if not name:
+            return "<html>Invalid name</html>", 400
+    try:
+        email = request.form['email']
+        if "@" not in email:
+            return "<html>Invalid email</html>", 400
+    except:
+        if not email:
+            return "<html>Invalid email</html>", 400
+    try:
+        content = request.form['content']
+        if content == "":
+            return "<html>Invalid content</html>", 400
+    except:
+        if not content:
+            return "<html>Invalid content</html>", 400
+    
+    email = request.form['email']
+    content = request.form['content']
+
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    
     return model_to_dict(timeline_post)
-        
-        
-        
-
-        
-
 
 @app.route('/api/timeline_post/<int:id>', methods=['DELETE'])
 def delete_time_line_post_byid(id):
