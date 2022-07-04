@@ -24,11 +24,11 @@ body {
 }
 
 * {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 h1 {
-  color: var(--red-salsa);
+  color: var(--space-cadet);
   text-transform: lowercase;
   margin: 30;
 }
@@ -92,6 +92,7 @@ ul a:hover {
 .home h1 {
   font-size: 3.5rem;
   margin-bottom: 20px;
+  color: var(--red-salsa);
 }
 
 .home p {
@@ -102,7 +103,6 @@ ul a:hover {
   font-size: 110%;
   transition: 0.3s ease-out;
 }
-
 
 .home .links {
   display: flex;
@@ -115,10 +115,10 @@ ul a:hover {
 .home .links li {
   font-size: 1.5rem;
   margin: 10px;
-  color: var(--space-cadet)
+  color: var(--space-cadet);
 }
 
-.home .links li:hover{
+.home .links li:hover {
   color: var(--honey-yellow);
 }
 
@@ -128,7 +128,7 @@ ul a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   margin: 25px 0px 50px 0;
 }
 
@@ -213,7 +213,7 @@ ul a:hover {
   color: var(--red-salsa);
 }
 
-.experience>h1 {
+.experience > h1 {
   color: var(--space-cadet);
 }
 
@@ -241,9 +241,8 @@ ul a:hover {
 }
 
 .exp-card:hover {
-  filter: brightness(.9);
+  filter: brightness(0.9);
 }
-
 
 .exp-card ul {
   margin: 0;
@@ -290,7 +289,8 @@ ul a:hover {
   color: var(--red-salsa);
 }
 
-.contact, .create-post {
+.contact,
+.create-post {
   width: 100%;
   margin: 15vh 0 10vh 0;
   display: flex;
@@ -308,7 +308,8 @@ ul a:hover {
   cursor: default;
 }
 
-.contact-form, .post-form {
+.contact-form,
+.post-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -318,7 +319,9 @@ ul a:hover {
 }
 
 .contact-form input,
-textarea, .post-form input, .post-form textarea {
+textarea,
+.post-form input,
+.post-form textarea {
   border: var(--red-salsa) 1px solid;
   border-radius: 8px;
   font-size: 15px;
@@ -327,11 +330,13 @@ textarea, .post-form input, .post-form textarea {
 }
 
 .contact-form input::placeholder,
-textarea::placeholder, .post-form input::placeholder {
+textarea::placeholder,
+.post-form input::placeholder {
   color: grey;
 }
 
-.contact-form button, .post-form button {
+.contact-form button,
+.post-form button {
   border: none;
   background-color: var(--red-salsa);
   color: #fff;
@@ -339,7 +344,8 @@ textarea::placeholder, .post-form input::placeholder {
   border-radius: 2px;
 }
 
-.contact-form button:hover, .post-form button:hover {
+.contact-form button:hover,
+.post-form button:hover {
   cursor: pointer;
   filter: brightness(1.4);
 }
@@ -361,8 +367,8 @@ textarea::placeholder, .post-form input::placeholder {
   border-radius: 3px;
 }
 
-.post:hover{
-  filter: brightness(.9);
+.post:hover {
+  filter: brightness(0.9);
 }
 
 .post h4 {
@@ -410,10 +416,10 @@ footer {
   }
 
   .exp-card {
-    font-size: .7rem;
+    font-size: 0.7rem;
     width: 80%;
   }
-  
+
   .nav-menu {
     justify-content: center;
   }
@@ -422,9 +428,10 @@ footer {
     width: 300px;
   }
 
-  .contact-form input, textarea {
+  .contact-form input,
+  textarea {
     width: 70%;
-}
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -437,12 +444,12 @@ footer {
   }
 
   .exp-card {
-    font-size: .8rem;
+    font-size: 0.8rem;
     width: 70%;
     margin: 20 0;
   }
 
-  .nav-menu li{
+  .nav-menu li {
     font-size: 1rem;
     text-align: center;
   }
