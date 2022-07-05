@@ -11,3 +11,4 @@ COPY . .
 CMD ["flask", "run", "--host=0.0.0.0"]
 
 EXPOSE 5000
+
