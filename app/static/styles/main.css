@@ -122,6 +122,28 @@ ul a:hover {
   color: var(--honey-yellow);
 }
 
+/* about */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1024px;
+}
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.about > a {
+  color: var(--space-cadet);
+  font-size: 0.5rem;
+  text-align: right;
+}
+
+.about-right > a > img {
+  width: 400px;
+}
+
 /* projects */
 
 .projs {
@@ -436,6 +458,10 @@ footer {
 
 @media only screen and (max-width: 600px) {
   .home {
+    flex-direction: column;
+  }
+
+  .about-content {
     flex-direction: column;
   }
 
