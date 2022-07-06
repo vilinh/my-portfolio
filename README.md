@@ -1,6 +1,6 @@
 # Production Engineering - Portfolio Site
 
-A portfolio website that that displays everything from my projects to interests! Utilizes PE concepts including (bash) scripting, databases, and services.
+My portfolio website with a page for posting comments deployed on a VPS. Utilizes PE concepts including (bash) scripting, databases, and containers.
 
 View the website here: https://vifolio.duckdns.org
 
