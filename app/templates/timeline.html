@@ -104,6 +104,10 @@
         body: formData,
       })
         .then(function (response) {
+          if (!response.ok && response.status == 429) {
+            window.location.replace("/429");
+            throw new Error("too many requests")
+          }
           return response.text();
         })
         .then(function (text) {

@@ -430,6 +430,19 @@ footer {
   color: var(--space-cadet);
 }
 
+/* error */
+
+.error {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error > a {
+  color: var(--space-cadet);
+}
+
 /* responsive */
 
 @media only screen and (max-width: 900px) {

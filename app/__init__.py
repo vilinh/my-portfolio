@@ -34,6 +34,9 @@ def hobbies():
     hobbies = data['polaroids']
     return render_template('hobbies.html', url=os.getenv("URL"), polaroids=hobbies)
 
+@app.route('/429')
+def error429():
+    return render_template('error429.html')
 
 # MySQL Database
 
@@ -121,7 +124,6 @@ def delete_time_line_post_byname(name):
     post = TimelinePost.get(TimelinePost.name == name)
     post.delete_instance()
     return "Successfully deleted\n"
-
 
 @app.route('/timeline')
 def timeline():
