@@ -11,10 +11,16 @@ View the website here: https://vifolio.duckdns.org
 - Python Flask, Jinja
 - MySQL Database 
 - API routes for "Timeline Posts"
+#### Development ####
+- Docker Container Orchestration for Development & Production Environments
+  - Nginx 
+  - Flask server
+  - Database server
+- Implements Nginx to Reverse Proxy & Limit Timeline Post Requests
+
 
 #### Production ####
-- Auto-Deployed on VPS with Bash Script
-- Configured a Systemd Service to run the application
+- Redeployed on VPS with Bash Script after Changes
 
 
 ## Running Locally
