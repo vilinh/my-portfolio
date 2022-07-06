@@ -2,7 +2,7 @@
 
 A portfolio website that that displays everything from my projects to interests! Utilizes PE concepts including (bash) scripting, databases, and services.
 
-View the website here: http://vifolio.duckdns.org:5000/
+View the website here: https://vifolio.duckdns.org
 
 ## Technologies Used & Concepts Implemented
 #### Frontend #### 
