@@ -1,8 +1,8 @@
 # Production Engineering - Portfolio Site
 
-A portfolio website that that displays everything from my projects to interests! Utilizes PE concepts including (bash) scripting, databases, and services.
+My portfolio website with a page for posting comments deployed on a VPS. Utilizes PE concepts including (bash) scripting, databases, and containers.
 
-View the website here: http://vifolio.duckdns.org:5000/
+View the website here: https://vifolio.duckdns.org
 
 ## Technologies Used & Concepts Implemented
 #### Frontend #### 
@@ -11,10 +11,16 @@ View the website here: http://vifolio.duckdns.org:5000/
 - Python Flask, Jinja
 - MySQL Database 
 - API routes for "Timeline Posts"
+#### Development ####
+- Docker Container Orchestration for Development & Production Environments
+  - Nginx 
+  - Flask server
+  - Database server
+- Implements Nginx to Reverse Proxy & Limit Timeline Post Requests
+
 
 #### Production ####
-- Auto-Deployed on VPS with Bash Script
-- Configured a Systemd Service to run the application
+- Redeployed on VPS with Bash Script after Changes
 
 
 ## Running Locally
