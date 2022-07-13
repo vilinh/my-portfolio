@@ -8,8 +8,10 @@ services:
    - .env
   environment:
    - FLASK_ENV=development
+   - FLASK_DEBUG=1
+   - TEMPLATES_AUTO_RELOAD=True
   ports:
-   - "5001:5000"
+   - "5005:5000"
   volumes:
    - .:/myportfolio
   depends_on:

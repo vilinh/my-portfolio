@@ -5,12 +5,9 @@ import json
 from peewee import *
 import datetime
 from playhouse.shortcuts import model_to_dict
-import requests
 import urllib
 import hashlib
-import sys
 from requests.models import Response
-import re
 
 load_dotenv()
 app = Flask(__name__)
@@ -18,6 +15,7 @@ app = Flask(__name__)
 dataf = open("app/static/data.json",  encoding="utf-8")
 data = json.load(dataf)
 
+# pages 
 
 @app.route('/')
 def index():
@@ -47,13 +45,12 @@ else:
     mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
                          user=os.getenv("MYSQL_USER"),
                          password=os.getenv("MYSQL_PASSWORD"),
-                         host=os.getenv("MYSQL_HOST"),
+                         host="localhost",
                          port=3306)
 
 print(mydb)
 
 # TimelinePost peewee model
-
 
 class TimelinePost(Model):
     name = CharField()
@@ -64,12 +61,10 @@ class TimelinePost(Model):
     class Meta:
         database = mydb
 
-
 mydb.connect()
 mydb.create_tables([TimelinePost])
 
 # TimelinePost api routes
-
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
@@ -79,7 +74,6 @@ def get_time_line_post():
             for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
-
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
@@ -118,7 +112,6 @@ def delete_time_line_post_byid(id):
     TimelinePost.get_by_id(id).delete_instance()
     return "Successfully deleted"
 
-
 @app.route('/api/timeline_post/<string:name>', methods=['DELETE'])
 def delete_time_line_post_byname(name):
     post = TimelinePost.get(TimelinePost.name == name)
@@ -141,3 +134,7 @@ def timeline():
         pfps.append(gravatar_url)
 
     return render_template('timeline.html', title="Timeline", url=os.getenv("URL"), num=len(posts["timeline_posts"]), posts=posts["timeline_posts"], pfps=pfps)
+
+@app.route('/login')
+def login():
+    return render_template('login.html')

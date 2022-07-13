@@ -1,0 +1,41 @@
+:root {
+  --space-cadet: #24346aff;
+  --red-salsa: #f05d5eff;
+  --lavender-blush: #fff5ee;
+  --moss-green: #7a8450ff;
+  --honey-yellow: #ffb20fff;
+  --grey: #f1f1f1;
+
+  --black: #282525;
+  --navbar-height: 50px;
+
+  scroll-behavior: smooth;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Quicksand", sans-serif;
+  color: var(--space-cadet)
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login input {
+  padding: 15px 20px;
+}
+
+.login button {
+  padding: 15px;
+  cursor: pointer;
+  background-color: var(--red-salsa);
+  color: white;
+  border: none;
+}
