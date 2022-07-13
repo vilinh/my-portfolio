@@ -79,8 +79,15 @@
             <div class="user-heading">
               <img src="{{ pfps[i] }}" />
               <div class="text">
-                <h4 class="post-name">{{ posts[i].name }}</h4>
-                <h5 class="post-email">{{ posts[i].email }}</h5>
+                <div class="post-header">
+                  <div class="post-header-l">
+                    <h4 class="post-name">{{ posts[i].name }}</h4>
+                    <h5 class="post-email">{{ posts[i].email }}</h5>
+                  </div>
+                  <div class="post-header-r">
+                    <p class="post-time">{{ posts[i].created_at }}</p>
+                  </div>
+                </div>
                 <p class="post-content">{{ posts[i].content }}</p>
               </div>
             </div>
@@ -106,7 +113,7 @@
         .then(function (response) {
           if (!response.ok && response.status == 429) {
             window.location.replace("/429");
-            throw new Error("too many requests")
+            throw new Error("too many requests");
           }
           return response.text();
         })
@@ -118,6 +125,5 @@
           console.error(error);
         });
     });
-
   </script>
 </html>

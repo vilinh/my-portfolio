@@ -390,6 +390,12 @@ textarea::placeholder,
   border-radius: 3px;
 }
 
+.post-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .post:hover {
   filter: brightness(0.9);
 }
@@ -400,6 +406,15 @@ textarea::placeholder,
 
 .post h5 {
   margin: 4px 0px;
+}
+
+.post .text {
+  width: 100%;
+}
+
+.post-time {
+  font-size: 13px;
+  margin: 0;
 }
 
 .post .user-heading {
