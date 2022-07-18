@@ -13,7 +13,6 @@ jobs:
     name: "Deploy to AWS EC2 Virtual Machine"
     runs-on: ubuntu-latest
     needs: [call-test-workflow]
-    if: always() && (needs.call-test-workflow == 'success')
     steps:
       - name: Configure SSH
         run: |
