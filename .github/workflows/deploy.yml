@@ -32,6 +32,4 @@ jobs:
         run: ssh my-vm '~/redeploy-site.sh'
       
       - name: Print out container status
-        run: |
-          cd ~/my-portfolio
-          docker-compose ps
+        run: ls
