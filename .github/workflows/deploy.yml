@@ -11,6 +11,7 @@ jobs:
     uses: ./.github/workflows/test.yml
   send-error-discord-notif:
     name: "Send Discord Error Notif"
+    runs-on: ubuntu-latest
     needs: [call-test-workflow]
     if: always() && (needs.call-test-workflow.result == 'failure')
     steps:
@@ -48,6 +49,7 @@ jobs:
         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
   send-deploy-fail-notif:
     name: "Send Deploy Fail Error Notif"
+    runs-on: ubuntu-latest
     needs: [call-test-workflow, deploy]
     if: always() && (needs.deploy.result == 'failure')
     steps:
