@@ -1,4 +1,6 @@
+from lib2to3.pytree import Base
 import os
+from smtpd import DebuggingServer
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import json
@@ -7,6 +9,9 @@ import datetime
 from playhouse.shortcuts import model_to_dict
 import urllib
 import hashlib
+import requests
+import hashlib
+from passlib.hash import sha256_crypt
 from requests.models import Response
 
 load_dotenv()
@@ -15,7 +20,8 @@ app = Flask(__name__)
 dataf = open("app/static/data.json",  encoding="utf-8")
 data = json.load(dataf)
 
-# pages 
+# pages
+
 
 @app.route('/')
 def index():
@@ -32,11 +38,13 @@ def hobbies():
     hobbies = data['polaroids']
     return render_template('hobbies.html', url=os.getenv("URL"), polaroids=hobbies)
 
+
 @app.route('/429')
 def error429():
     return render_template('error429.html')
 
 # MySQL Database
+
 
 if os.getenv("TESTING") == "true":
     print("Running in test mode")
@@ -52,19 +60,31 @@ print(mydb)
 
 # TimelinePost peewee model
 
-class TimelinePost(Model):
-    name = CharField()
+
+class BaseModel(Model):
+    class Meta:
+        database = mydb
+
+
+class User(BaseModel):
+    username = CharField(unique=True)
+    password = CharField()
+    is_admin = BooleanField(default=False)
+    created_at = DateTimeField(default=datetime.datetime.now())
+
+
+class TimelinePost(BaseModel):
+    user = ForeignKeyField(User, backref='posts')
     email = CharField()
     content = TextField()
     created_at = DateTimeField(default=datetime.datetime.now())
 
-    class Meta:
-        database = mydb
 
 mydb.connect()
-mydb.create_tables([TimelinePost])
+mydb.create_tables([User, TimelinePost])
 
-# TimelinePost api routes
+# api routes
+
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
@@ -75,12 +95,43 @@ def get_time_line_post():
         ]
     }
 
+@app.route('/api/user', methods=['GET'])
+def get_users():
+    return {
+        'users': [
+            model_to_dict(p)
+            for p in User.select().order_by(User.created_at.desc())
+        ]
+    }
+
+
+
+
+@app.route('/api/user', methods=['POST'])
+def create_user():
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        json = request.json
+        username = json['username']
+        password = json['password']
+        password = sha256_crypt.encrypt(password)
+        is_admin = json['is_admin']
+
+        # sha256_crypt.verify("password", password))
+
+        user = User.create(
+        name=username, password=password, is_admin=is_admin)
+    
+    return model_to_dict(user)
+
+
+
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name, content, email = None, None, None
-    try: 
+    try:
         name = request.form['name']
-        if name =="":
+        if name == "":
             return "<html>Invalid name</html>", 400
     except:
         if not name:
@@ -99,24 +150,28 @@ def post_time_line_post():
     except:
         if not content:
             return "<html>Invalid content</html>", 400
-    
+
     email = request.form['email']
     content = request.form['content']
 
-    timeline_post = TimelinePost.create(name=name, email=email, content=content)
-    
+    timeline_post = TimelinePost.create(
+        name=name, email=email, content=content)
+
     return model_to_dict(timeline_post)
+
 
 @app.route('/api/timeline_post/<int:id>', methods=['DELETE'])
 def delete_time_line_post_byid(id):
     TimelinePost.get_by_id(id).delete_instance()
     return "Successfully deleted"
 
+
 @app.route('/api/timeline_post/<string:name>', methods=['DELETE'])
 def delete_time_line_post_byname(name):
     post = TimelinePost.get(TimelinePost.name == name)
     post.delete_instance()
     return "Successfully deleted\n"
+
 
 @app.route('/timeline')
 def timeline():
@@ -134,6 +189,7 @@ def timeline():
         pfps.append(gravatar_url)
 
     return render_template('timeline.html', title="Timeline", url=os.getenv("URL"), num=len(posts["timeline_posts"]), posts=posts["timeline_posts"], pfps=pfps)
+
 
 @app.route('/login')
 def login():
