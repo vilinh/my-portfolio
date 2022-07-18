@@ -61,30 +61,20 @@ print(mydb)
 # TimelinePost peewee model
 
 
-class BaseModel(Model):
-    class Meta:
-        database = mydb
-
-
-class User(BaseModel):
-    username = CharField(unique=True)
-    password = CharField()
-    is_admin = BooleanField(default=False)
-    created_at = DateTimeField(default=datetime.datetime.now())
-
-
-class TimelinePost(BaseModel):
-    user = ForeignKeyField(User, backref='posts')
+class TimelinePost(Model):
+    name = CharField()
     email = CharField()
     content = TextField()
     created_at = DateTimeField(default=datetime.datetime.now())
 
+    class Meta:
+        database = mydb
+
 
 mydb.connect()
-mydb.create_tables([User, TimelinePost])
+mydb.create_tables([TimelinePost])
 
 # api routes
-
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
@@ -94,37 +84,6 @@ def get_time_line_post():
             for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
-
-@app.route('/api/user', methods=['GET'])
-def get_users():
-    return {
-        'users': [
-            model_to_dict(p)
-            for p in User.select().order_by(User.created_at.desc())
-        ]
-    }
-
-
-
-
-@app.route('/api/user', methods=['POST'])
-def create_user():
-    content_type = request.headers.get('Content-Type')
-    if (content_type == 'application/json'):
-        json = request.json
-        username = json['username']
-        password = json['password']
-        password = sha256_crypt.encrypt(password)
-        is_admin = json['is_admin']
-
-        # sha256_crypt.verify("password", password))
-
-        user = User.create(
-        name=username, password=password, is_admin=is_admin)
-    
-    return model_to_dict(user)
-
-
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
