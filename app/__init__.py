@@ -53,7 +53,7 @@ else:
     mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
                          user=os.getenv("MYSQL_USER"),
                          password=os.getenv("MYSQL_PASSWORD"),
-                         host="localhost",
+                         host=os.getENV("MYSQL_HOST"),
                          port=3306)
 
 print(mydb)
