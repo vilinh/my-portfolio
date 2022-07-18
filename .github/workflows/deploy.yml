@@ -9,6 +9,13 @@ on:
 jobs:
   call-test-workflow:
     uses: ./.github/workflows/test.yml
+  send-error-discord-notif:
+    name: "Send Discord Error Notif"
+    needs: [call-test-workflow]
+    if: always() && (needs.call-test-workflow.result == 'failure')
+    steps:
+      - name: Send error notification to Discord server
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Tests Failed"
   deploy:
     name: "Deploy to AWS EC2 Virtual Machine"
     runs-on: ubuntu-latest
@@ -39,3 +46,10 @@ jobs:
       
       - name: Send successful notification to Discord server
         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
+  send-error-discord-notif:
+    name: "Send Discord Error Notif"
+    needs: [call-test-workflow, deploy]
+    if: always() && (needs.deploy.result == 'failure')
+    steps:
+      - name: Send error notification to Discord server
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed"
