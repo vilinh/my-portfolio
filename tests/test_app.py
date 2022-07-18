@@ -12,7 +12,7 @@ class AppTestCase(unittest.TestCase):
         response = self.client.get("/")
         assert response.status_code == 200
         html = response.get_data(as_text=True)
-        assert "<title>error</title>" in html
+        assert "<title>Vi-Linh</title>" in html
 
         # TODO Add more test relating to the home page
         assert "<h1>vi-linh vu</h1>" in html
