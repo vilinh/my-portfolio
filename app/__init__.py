@@ -1,6 +1,4 @@
-from lib2to3.pytree import Base
 import os
-from smtpd import DebuggingServer
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import json
@@ -9,10 +7,7 @@ import datetime
 from playhouse.shortcuts import model_to_dict
 import urllib
 import hashlib
-import requests
 import hashlib
-from passlib.hash import sha256_crypt
-from requests.models import Response
 
 load_dotenv()
 app = Flask(__name__)
