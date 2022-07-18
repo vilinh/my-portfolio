@@ -46,8 +46,8 @@ jobs:
       
       - name: Send successful notification to Discord server
         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
-  send-error-discord-notif:
-    name: "Send Discord Error Notif"
+  send-deploy-fail-notif:
+    name: "Send Deploy Fail Error Notif"
     needs: [call-test-workflow, deploy]
     if: always() && (needs.deploy.result == 'failure')
     steps:
