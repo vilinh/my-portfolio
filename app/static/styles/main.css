@@ -23,12 +23,8 @@ body {
   background-color: var(--grey);
 }
 
-* {
-  font-family: "Quicksand", sans-serif;
-}
-
 h1 {
-  color: var(--space-cadet);
+  color: var(--black);
   text-transform: lowercase;
   margin: 30;
 }
@@ -41,41 +37,57 @@ p {
   text-transform: lowercase;
 }
 
-a {
-  text-decoration: none;
-  color: #fff;
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  color: var(--black);
+  background-color: var(--light-cream);
+  z-index: 999;
 }
 
-nav {
-  width: 100%;
-  padding: 20px 0px;
-  background-color: var(--grey);
-  z-index: 999;
-  position: absolute;
-  top: 0;
-  height: var(--navbar-height);
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0 0.6rem;
+}
+
+nav ul a li {
+  font-size: 1.6rem;
+  font-weight: 500;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  transition: 0.3s ease;
+}
+nav ul li a:hover {
+  color: var(--seagreen);
+}
+
+nav .logo {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+.nav .logo:hover {
+  color: var(--rose);
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 0;
-}
-
-ul {
-  list-style: none;
-}
-
-ul a {
-  text-decoration: none;
-  color: var(--red-salsa);
-  text-transform: lowercase;
-}
-
-ul a:hover {
-  color: var(--red-salsa);
+  justify-content: flex-end;
 }
 
 .home {

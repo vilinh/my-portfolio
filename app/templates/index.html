@@ -8,6 +8,7 @@
   <meta property="og:title" content="Personal Portfolio" />
   <meta property="og:description" content="My Personal Portfolio" />
   <meta property="og:url" content="{{ url }}" />
+  <script src="https://kit.fontawesome.com/74b02937c2.js" crossorigin="anonymous"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,26 +19,36 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
+  <link lang="sass" rel="stylesheet" href="./static/styles/app.css" />
   <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
   <title>Vi-Linh</title>
 </head>
 
 <!--Nav-->
 <nav>
-  <ul class="nav-menu">
-    <a href="">
-      <li>Home</li>
-    </a>
-    <a href="#experience">
-      <li>Experience</li>
-    </a>
-    <a href="#projs">
-      <li>Projects</li>
-    </a>
-    <a href="{{ url_for('timeline') }}">
-      <li>Timeline</li>
-    </a>
-  </ul>
+  <div class="container">
+    <div class="nav">
+      <i class="logo fa-regular fa-star"></i>
+      <div class="nav-menu">
+        <ul class="nav-menu">
+          <a href="">
+            <li>Home</li>
+          </a>
+          <a href="#experience">
+            <li>Experience</li>
+          </a>
+          <a href="#projs">
+            <li>Projects</li>
+          </a>
+          <a href="{{ url_for('timeline') }}">
+            <li>Timeline</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
 </nav>
 
 <body class="max-width">
