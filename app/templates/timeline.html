@@ -24,78 +24,75 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link lang="sass" rel="stylesheet" href="./static/styles/app.css" />
+
     <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
     <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
     <title>Timeline</title>
   </head>
 
   <nav>
-    <div class="nav container">
-      <ul class="nav-menu">
-        <a href="{{ url_for('index') }}"><li>Home</li></a>
-      </ul>
-    </div>
+    <ul class="nav-menu">
+      <a href="{{ url_for('index') }}"><li>Home</li></a>
+    </ul>
   </nav>
 
   <body class="max-width">
     <div class="timeline">
-      <div class="container">
-        <div class="timeline-content">
-          <div id="create-post" class="create-post">
-            <h1 id="form-h1">
-              create a post <i class="feather fa-solid fa-feather"></i>
-            </h1>
-            <form id="post-form" class="post-form">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="name"
-                required
-              />
-              <input type="email" name="email" placeholder="email" required />
-              <textarea
-                id="content"
-                name="content"
-                placeholder="message"
-                required
-                rows="5"
-              ></textarea>
-              <span id="name-error"></span>
-              <button
-                id="post-submit"
-                type="submit"
-                value="submit"
-                className="post-submit"
-                onclick="validate('name')"
-              >
-                post
-              </button>
-            </form>
-          </div>
+      <h1>timeline</h1>
+      <div class="timeline-content">
+        <div id="create-post" class="create-post">
+          <h1 id="form-h1">
+            create a post <i class="feather fa-solid fa-feather"></i>
+          </h1>
+          <form id="post-form" class="post-form">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea
+              id="content"
+              name="content"
+              placeholder="message"
+              required
+              rows="5"
+            ></textarea>
+            <span id="name-error"></span>
+            <button
+              id="post-submit"
+              type="submit"
+              value="submit"
+              className="post-submit"
+              onclick="validate('name')"
+            >
+              post
+            </button>
+          </form>
+        </div>
 
-          <div class="posts">
-            {% for i in range(0, num) %}
-            <div class="post">
-              <div class="user-heading">
-                <img src="{{ pfps[i] }}" />
-                <div class="text">
-                  <div class="post-header">
-                    <div class="post-header-l">
-                      <p class="post-name">{{ posts[i].name }}</p>
-                      <p class="post-email">{{ posts[i].email }}</p>
-                    </div>
-                    <div class="post-header-r">
-                      <p class="post-time">{{ posts[i].created_at }}</p>
-                    </div>
+        <div class="posts">
+          {% for i in range(0, num) %}
+          <div class="post">
+            <div class="user-heading">
+              <img src="{{ pfps[i] }}" />
+              <div class="text">
+                <div class="post-header">
+                  <div class="post-header-l">
+                    <h4 class="post-name">{{ posts[i].name }}</h4>
+                    <h5 class="post-email">{{ posts[i].email }}</h5>
+                  </div>
+                  <div class="post-header-r">
+                    <p class="post-time">{{ posts[i].created_at }}</p>
                   </div>
                 </div>
+                <p class="post-content">{{ posts[i].content }}</p>
               </div>
-              <p class="post-content">{{ posts[i].content }}</p>
             </div>
-            {% endfor %}
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>
