@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --navy: #012d72;
   --true-blue: #3699af;
-  --seagreen: #9ec7c1;
+  --seagreen: #bbd0cc;
+  --light-rose: hsl(12, 34%, 89%);
   --rose: #e4beb3;
   --dusty-purple: #3699af;
   --light-cream: #fffbf5;
+  --cream: #f6ebe8;
+  --pit: #b0585b;
   --white: #fff;
   --turquoise: #495963;
   --black: #212121;
@@ -21,6 +23,9 @@ html {
 body {
   background-color: var(--light-cream);
   font-family: "Hind Siliguri", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 *,
@@ -29,6 +34,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 a {
