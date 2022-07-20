@@ -15,8 +15,6 @@ class AppTestCase(unittest.TestCase):
         assert "<title>Vi-Linh</title>" in html
 
         # TODO Add more test relating to the home page
-        assert "<h1>vi-linh vu</h1>" in html
-        assert "<h1>Projects</h1>" in html
         assert "<meta charset=\"utf-8\" />" in html
 
     def test_timeline(self):
