@@ -13,7 +13,6 @@ class AppTestCase(unittest.TestCase):
         assert response.status_code == 200
         html = response.get_data(as_text=True)
         assert "<title>Vi-Linh</title>" in html
-        assert "<h1>vi-linh vu</h1>" in html
         assert "<div class=\"home\">" in html
 
     def test_timeline_page_form(self):
