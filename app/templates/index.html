@@ -8,6 +8,7 @@
   <meta property="og:title" content="Personal Portfolio" />
   <meta property="og:description" content="My Personal Portfolio" />
   <meta property="og:url" content="{{ url }}" />
+  <script src="https://kit.fontawesome.com/74b02937c2.js" crossorigin="anonymous"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,115 +19,161 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
+  <link lang="sass" rel="stylesheet" href="./static/styles/app.css" />
   <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
   <title>Vi-Linh</title>
 </head>
 
 <!--Nav-->
 <nav>
-  <ul class="nav-menu">
-    <a href="">
-      <li>Home</li>
-    </a>
-    <a href="#experience">
-      <li>Experience</li>
-    </a>
-    <a href="#projs">
-      <li>Projects</li>
-    </a>
-    <a href="{{ url_for('timeline') }}">
-      <li>Timeline</li>
-    </a>
-  </ul>
+  <div class="container">
+    <div class="nav">
+      <i class="logo fa-regular fa-star"></i>
+      <div class="nav-menu">
+        <ul class="nav-menu">
+          <a href="">
+            <li>Home</li>
+          </a>
+          <a href="#experience">
+            <li>Experience</li>
+          </a>
+          <a href="#creations">
+            <li>Projects</li>
+          </a>
+          <a href="{{ url_for('timeline') }}">
+            <li>Timeline</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
 </nav>
 
-<body class="max-width">
-  <!--Home Section-->
-  <div class="home">
-    <h1>vi-linh vu</h1>
-    <p>
-      <span class="tag">developer</span> | <span class="tag">fellow</span> |
-      <span class="tag">student</span> 
-    </p>
-    <ul class="links">
-      <a href="https://www.linkedin.com/in/vilinhv/" target="_blank">
-        <li><i class="fa-brands fa-linkedin"></i></li>
-      </a>
-      <a href="https://www.github.com/vilinh" target="_blank">
-        <li><i class="fa-brands fa-github"></i></li>
-      </a>
-      <a href="mailto:vilinhlvu@gmail.com">
-        <li><i class="fa-solid fa-envelope"></i></li>
-      </a>
-
-  </div>
-
-  <!--About -->
-  <div id="about" class="about">
-    <h1>About Me</h1>
-    <div class="about-content">
-      <div class="about-left">
-        <p>Hi there! My name is Vi-Linh Vu and I am currently a first year student majoring in Computer Science at
-          California Polytechnic State University in San Luis Obispo (aka Cal Poly SLO)! I'm currently interested in
-          full-stack development and am trying to learn front-end and back-end via online resources and side projects.
-        </p>
-      </div>
-      <div class="about-right">
-        <a href="https://storyset.com/people" target="_blank"><img src="../static/img/pfp.png"/></a>
+<body>
+  <!--Hero Section-->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-wrapper">
+        <div class="hero-info">
+          <h1 class="hero-title">vi-linh</h1>
+          <p class="hero-desc">
+            I am a college student studying computer science. I have an
+            interest in art and web apps.
+          </p>
+          <div class="hero-icons">
+            <button>
+              <a href="mailto:vilinhlvu@gmail.com"><i class="fas fa-envelope"></i></a>
+            </button>
+            <button>
+              <a href="https://github.com/vilinh">
+                <i class="fab fa-github"></i>
+              </a>
+            </button>
+            <button>
+              <a href="https://www.linkedin.com/in/vi-linh-vu-a35734194/">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </button>
+          </div>
+        </div>
+        <div class="hero-img">
+          <a href="https://storyset.com/">
+            <img src="../static/img/peach.png" alt="peach"></img>
+          </a>
+        </div>
+        <div class="star-icons">
+          <a href=#about smooth>
+            <i class="star-icon  far fa-star"></i>
+          </a>
+          <a thref=#creations smooth>
+            <i class="star-icon  far fa-star"></i>
+          </a>
+          <a href=#contact smooth>
+            <i class="star-icon  far fa-star"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!--Experiences -->
-  <div id="experience" class="experience">
-    <h1>
-      Experience
-      <a id="resume" href="../static/img/Vi-Linh Vu Resume.pdf" target="_blank"><i
-          class="fa-solid fa-file-arrow-down"></i></a>
-    </h1>
-    <div class="exp-body">
-      <div class="exp-cards">
-        {% for exp in experiences %}
-        <div class="exp-card">
-          <h2>
-            {{ exp.name }} @ <span class="company">{{ exp.company }}</span>
-          </h2>
-          <h4>{{ exp.term }}</h4>
-          <ul>
-            {% for pt in exp.descrip %}
-            <li>{{ pt }}</li>
-            {% endfor %}
-          </ul>
+  <!--About -->
+  <div id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h1 class="about-title">about</h1>
+          <p class="about-desc">
+            Hi there! My name is Vi-Linh Vu and I am currently a first year
+            student majoring in Computer Science at California Polytechnic
+            State University in San Luis Obispo (aka Cal Poly SLO)! I'm
+            currently interested in full-stack development and am trying to
+            learn front-end and back-end via online resources and side
+            projects.
+          </p>
+        </div>
+        <div class="about-img">
+          <a href="https://storyset.com/education">
+            <img src="../static/img/studying.png" alt="student" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Project Section-->
+  <div id="creations" class="creations">
+    <div class="container">
+      <h1 class="creations-title">Projects</h1>
+      <div class="creations-items">
+        {% for proj in projects %}
+        <div class="creation-item">
+          <div class="creation-icons">
+            <i class="icon star far fa-star"></i>
+            <a class="icon" href="{{ proj.github_link }}" target="_blank">
+              <i class="fas fa-link"></i>
+            </a>
+          </div>
+          <div class="creation-title">{{proj.proj_title}}</div>
+          <p class="creation-desc">{{proj.proj_descript}}</p>
+          <p class="creation-lang">{{proj.technologies}}</p>
         </div>
         {% endfor %}
       </div>
     </div>
   </div>
 
-  <!--Project Section-->
-  <div id="projs" class="projs">
-    <h1>Projects</h1>
-    <div class="proj-cards">
-      {% for proj in projects %}
-      <div class="proj-card">
-        <div class="proj-buttons">
-          <a href="{{ proj.github_link }}"><i class="fa-solid fa-up-right-from-square proj-button"></i></a>
-        </div>
-        <img src="../static/img/projyellow.png" width="100" />
-        <div class="proj-card-text">
-          <h2>{{ proj.proj_title }}</h2>
-          <p class="proj-descrip">{{ proj.proj_descript }}</p>
-          <p class="tools">
-            <span style="color: var(--red-salsa)">● </span>{{
-            proj.technologies }}
-          </p>
+  <!--Experiences -->
+  <div id="experience" class="experience">
+    <div class="container">
+      <h1 class="experience-title">
+        Experience
+        <a id="resume" href="../static/img/Vi-Linh Vu Resume.pdf" target="_blank"><i
+            class="fa-solid fa-file-arrow-down"></i></a>
+      </h1>
+      <div class="exp-body">
+        <div class="exp-cards">
+          {% for exp in experiences %}
+          <div class="exp-card">
+            <h2>
+              {{ exp.name }} @ <span class="company">{{ exp.company }}</span>
+            </h2>
+            <h4>{{ exp.term }}</h4>
+            <ul>
+              {% for pt in exp.descrip %}
+              <li>{{ pt }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
         </div>
       </div>
-      {% endfor %}
     </div>
   </div>
 </body>
 
-<footer>Made with <i class="far fa-heart" style="color: var(--red-salsa);"></i> by Vi-Linh</footer>
+<footer>
+  Made with <i class="far fa-heart" style="color: var(--red-salsa)"></i> by
+  Vi-Linh
+</footer>
 
 </html>
