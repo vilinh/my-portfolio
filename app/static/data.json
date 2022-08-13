@@ -19,10 +19,10 @@
       "technologies": "HTML, CSS, Javascript"
     },
     {
-      "proj_title": "movie hub",
-      "proj_descript": "A watchlist to keep track of what you want to watch next!",
-      "github_link": "https://github.com/vilinh/moviehub",
-      "technologies": "React, Javascript, APIs"
+      "proj_title": "music merge",
+      "proj_descript": "A web app to merge playlists from other sites to your Spotify playlist",
+      "github_link": "https://github.com/vilinh/music-merge",
+      "technologies": "React, Express, MongoDB, Node.js"
     }
   ],
 
