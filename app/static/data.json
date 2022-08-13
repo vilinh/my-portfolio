@@ -30,9 +30,9 @@
     {
       "name": "Production Engineering Fellow",
       "descrip": [
-        "Deployed a production level application on a VPS",
-        "Automated deployment with bash scripting",
-        "Used Flask to implement reusable HTML components"
+        "Completed 12 weeks of structured curriculum-based learning covering core PE topics (Linux Fundamentals, Scripting, Databases, Services, Testing, CI/CD, Troubleshooting), supplemented with events / workshops hosted by industry experts",
+        "Created a personal portfolio website using Python, Flask, Jinja, MySQL, Nginx, and unittest",
+        "Automated testing and deployment workflows using CI/CD"
       ],
       "term": "may 2022 - present",
       "company": "mlh w/ meta"
